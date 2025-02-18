@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+/* Tailwind files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables Roots */
+:root {
+  /* colors */
+  --brand-color: #513973;
+  --brand-seconed-color: #FAC32E;
+  --seconed-color: #ffffff;
+
+  /* fonts */
+  --font-family: 'Cairo', sans-serif;
+}
+
+/* Global */
+* {
+  font-family: var(--font-family);
+}
+
+/* Fontausome fa-solid */
+.header-icon {
+  color: var(--seconed-color);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--seconed-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header-icon:hover {
+  color: var(--brand-seconed-color);
+}
