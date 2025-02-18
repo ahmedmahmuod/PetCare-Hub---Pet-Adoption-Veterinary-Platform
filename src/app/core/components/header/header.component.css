@@ -20,6 +20,11 @@ header {
   color: var(--seconed-color);
   font-size: 1.1rem;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nav-left ul li:hover {
+  color: var(--brand-seconed-color);
 }
 
 .nav-right .signup,
@@ -27,10 +32,15 @@ header {
   color: var(--seconed-color);
   font-size: 1.1rem;
   cursor: pointer;
-  padding: 8px 18px;
-  /* font-weight: bold; */
-  width: 110px;
+  padding: 6px 18px;
+  width: 100px;
   text-align: center;
+  transition: 0.2s ease;
+}
+
+.nav-right .signup:hover,
+.nav-right .login:hover {
+  opacity: 0.8;
 }
 
 .nav-right .login {
@@ -81,6 +91,12 @@ header {
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
   padding: 10px;
   text-align: center;
+  transition: 0.2s ease;
+}
+
+.mobile-links ul li:hover {
+  color: var(--brand-seconed-color);
+  cursor: pointer;
 }
 
 .mobile-user {
@@ -96,13 +112,22 @@ header {
 .mobile-user ul .signup,
 .signin {
   transition: all 0.3s ease;
-  background: var(--brand-seconed-color);
   color: var(--brand-color);
   width: 100%;
   text-align: center;
   padding: 10px 5px;
+  cursor: pointer;
+}
+.mobile-user ul .signup:hover,
+.signin:hover {
+  opacity: 0.8;
 }
 
-.mobile-menu {
-  transition: right 1.4s ease-in-out;
+.mobile-user ul .signin {
+  background: var(--brand-seconed-color);
+}
+
+.mobile-user ul .signup {
+  border: 1px solid var(--brand-seconed-color);
+  color: var(--brand-seconed-color);
 }

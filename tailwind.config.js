@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         'brand-color': 'var(--brand-color)',
+        'brand-seconed-color': 'var(--brand-seconed-color)',
         'seconed-color': 'var(--seconed-color)',
       },
       fontFamily: {
