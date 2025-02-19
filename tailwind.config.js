@@ -9,6 +9,7 @@ module.exports = {
         'brand-color': 'var(--brand-color)',
         'brand-seconed-color': 'var(--brand-seconed-color)',
         'seconed-color': 'var(--seconed-color)',
+        'third-color': 'var(--third-color)',
       },
       fontFamily: {
         cairo: ['var(--font-family)', 'sans-serif'],

@@ -24,7 +24,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 export class HeaderComponent {
   isMenuOpen = false;
-  isLoggedIn = true;
+  isLoggedIn = false;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
