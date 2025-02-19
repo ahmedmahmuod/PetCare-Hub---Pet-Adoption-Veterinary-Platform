@@ -7,12 +7,12 @@
 :root {
   /* colors */
   --brand-color: #513973;
-  --brand-seconed-color: #FAC32E;
+  --brand-seconed-color: #fac32e;
   --seconed-color: #ffffff;
-  --third-color: #F5F3F3;
+  --third-color: #f5f3f3;
 
   /* fonts */
-  --font-family: 'Cairo', sans-serif;
+  --font-family: "Noto Kufi Arabic", sans-serif !important;
 }
 
 /* Global */

@@ -5,7 +5,7 @@ import { ButtonModule } from 'primeng/button';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [TranslateModule, ButtonModule],
+  imports: [TranslateModule, ButtonModule, TranslateModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
 })

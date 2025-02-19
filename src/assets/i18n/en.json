@@ -1,6 +1,39 @@
 {
-    "HOME": {
-      "WELCOME": "Welcome to our website!",
-      "HELLO": "Hello"
+  "Header": {
+    "Links": {
+      "Home": "Home",
+      "Services": "Services",
+      "Vets": "Vets",
+      "Doctors": "Doctors",
+      "Shop": "Shop"
+    },
+    "Btns": {
+      "Login": "Login",
+      "Or": "or",
+      "Register": "Register"
     }
+  },
+  "Footer": {
+    "Links": {
+      "Title": "Quick Links",
+      "Home": "Home",
+      "Services": "Services",
+      "Vets": "Vets",
+      "Doctors": "Doctors",
+      "Shop": "Shop"
+    },
+    "Contacts": {
+      "Title": "Contacts",
+      "Address": "Damietta, Egypt"
+    },
+    "Social": {
+      "Title": "Let’s Get in Touch",
+      "Placeholder": "Your email address",
+      "Btn": "Connect"
+    },
+    "Copyright": {
+      "Text": "All rights reserved © 2025 for",
+      "Link": "(Developer)"
+    }
+  }
 }

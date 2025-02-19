@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
   animations: [
@@ -26,7 +27,7 @@ export class HeaderComponent {
   @Output() languageChange = new EventEmitter<string>();
 
   isMenuOpen = false;
-  isLoggedIn = true;
+  isLoggedIn = false;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;

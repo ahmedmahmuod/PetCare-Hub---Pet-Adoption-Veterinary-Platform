@@ -9,11 +9,11 @@
             <!-- page links -->
             <div class="page-links hidden md:flex">
                 <ul class="flex items-center gap-x-6">
-                    <li>Home</li>
-                    <li>Services</li>
-                    <li>Vets</li>
-                    <li>Doctors</li>
-                    <li>Shop</li>
+                    <li>{{'Header.Links.Home' | translate}}</li>
+                    <li>{{'Header.Links.Services' | translate}}</li>
+                    <li>{{'Header.Links.Vets' | translate}}</li>
+                    <li>{{'Header.Links.Doctors' | translate}}</li>
+                    <li>{{'Header.Links.Shop' | translate}}</li>
                 </ul>
             </div>
         </div>
@@ -34,8 +34,8 @@
             <!-- user not login -->
             <ng-template #notLoggedIn>
                 <ul class="hidden md:flex items-center gap-x-2">
-                    <li class="signup transition duration-300">Sign Up</li>
-                    <li class="login transition duration-300">Login</li>
+                    <li class="signup transition duration-300">{{'Header.Btns.Register' | translate}}</li>
+                    <li class="login transition duration-300">{{'Header.Btns.Login' | translate}}</li>
                 </ul>
             </ng-template>
         </div>
@@ -48,11 +48,11 @@
             <!-- Links -->
             <div class="mobile-links">
                 <ul class="mb-10">
-                    <li>Home</li>
-                    <li>Services</li>
-                    <li>Vets</li>
-                    <li>Doctors</li>
-                    <li>Shop</li>
+                    <li>{{'Header.Links.Home' | translate}}</li>
+                    <li>{{'Header.Links.Services' | translate}}</li>
+                    <li>{{'Header.Links.Vets' | translate}}</li>
+                    <li>{{'Header.Links.Doctors' | translate}}</li>
+                    <li>{{'Header.Links.Shop' | translate}}</li>
                 </ul>
             </div>
             <!-- is login or no -->
@@ -67,9 +67,9 @@
                 <ng-template #notLoggedIn>
                     <div class="mobile-user">
                         <ul>
-                            <li class="signin">Login</li>
-                            <li class="text-center"><p>or</p></li>
-                            <li class="signup">Sign Up</li>
+                            <li class="signin">{{'Header.Btns.Login' | translate}}</li>
+                            <li class="text-center"><p>{{'Header.Btns.Or' | translate}}</p></li>
+                            <li class="signup">{{'Header.Btns.Register' | translate}}</li>
                         </ul>
                     </div>
                 </ng-template>

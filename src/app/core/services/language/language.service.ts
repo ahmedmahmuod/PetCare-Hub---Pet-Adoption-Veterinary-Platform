@@ -6,31 +6,26 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class LanguageService {
+  private platformId = inject(PLATFORM_ID);
   private currentLanguageSubject = new BehaviorSubject<string>(this.getLanguageFromLocalStorage());
   public currentLanguage$ = this.currentLanguageSubject.asObservable();
-  private platformId = inject(PLATFORM_ID);
 
   constructor() {
-    // Listen for changes in localStorage
     if (isPlatformBrowser(this.platformId)) {
       window.addEventListener('storage', (event) => {
-        if (event.key === 'language') {
-          const newLanguage = event.newValue || 'en';
-          this.currentLanguageSubject.next(newLanguage);
+        if (event.key === 'language' && event.newValue) {
+          this.currentLanguageSubject.next(event.newValue);
         }
       });
     }
   }
 
-  // Method to get the current language from localStorage
+  // getLanguageFromLocalStorage method to get the current language from localStorage
   private getLanguageFromLocalStorage(): string {
-    if (isPlatformBrowser(this.platformId)) {
-      return localStorage.getItem('language') || 'en'; 
-    }
-    return 'en';
+    return isPlatformBrowser(this.platformId) ? localStorage.getItem('language') || 'en' : 'en';
   }
 
-  // Method to change the language
+  // switchLanguage method to change the language
   public switchLanguage(lang: string): void {
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('language', lang);
@@ -38,7 +33,7 @@ export class LanguageService {
     this.currentLanguageSubject.next(lang);
   }
 
-  // Method to get the current language
+  // getCurrentLanguage method to get the current language
   public getCurrentLanguage(): string {
     return this.currentLanguageSubject.value;
   }
