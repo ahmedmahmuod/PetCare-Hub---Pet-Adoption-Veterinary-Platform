@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -23,10 +23,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   ]),]
 })
 export class HeaderComponent {
+  @Output() languageChange = new EventEmitter<string>();
+
   isMenuOpen = false;
-  isLoggedIn = false;
+  isLoggedIn = true;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+
+
 }

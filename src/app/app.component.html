@@ -1,14 +1,11 @@
-<main class="main-content">
+<main [dir]="currentLang === 'en' ? 'ltr' : 'rtl'" class="main-content">
   <!-- Header -->
   <app-header />
 
   <!-- Content -->
   <div class="content">
     <router-outlet />
-    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi voluptates optio impedit enim in tenetur, consequatur sed soluta. Reiciendis consectetur quos quas minus id eveniet perferendis, soluta animi sit magnam!</h1>
-    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi voluptates optio impedit enim in tenetur, consequatur sed soluta. Reiciendis consectetur quos quas minus id eveniet perferendis, soluta animi sit magnam!</h1>
-    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi voluptates optio impedit enim in tenetur, consequatur sed soluta. Reiciendis consectetur quos quas minus id eveniet perferendis, soluta animi sit magnam!</h1>
-    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi voluptates optio impedit enim in tenetur, consequatur sed soluta. Reiciendis consectetur quos quas minus id eveniet perferendis, soluta animi sit magnam!</h1>
+    <app-language-toggle (languageChange)="onLanguageChange($event)" />
   </div>
 
   <!-- Footer -->

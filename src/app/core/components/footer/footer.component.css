@@ -125,7 +125,7 @@ footer .copy-right {
   font-size: 16px;
   text-align: center;
 }
-footer .copy-right a{
+footer .copy-right a {
   color: var(--brand-seconed-color);
   text-decoration: underline;
 }
