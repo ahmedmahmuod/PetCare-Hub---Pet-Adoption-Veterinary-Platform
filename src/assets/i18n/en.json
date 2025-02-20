@@ -13,6 +13,16 @@
       "Register": "Register"
     }
   },
+
+  "Pages": {
+    "Home": {
+      "Hero": {
+        "Title": "Find a loving local pet sitter or dog Walker",
+        "Subtitle": "Who treats your pet like family"
+      }
+    }
+  },
+
   "Footer": {
     "Links": {
       "Title": "Quick Links",

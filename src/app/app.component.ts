@@ -21,15 +21,18 @@ export class AppComponent implements OnInit {
   currentLang: string = 'en';
   dir: 'ltr' | 'rtl' = 'ltr';
 
+  // Inject the TranslateService and Router
   constructor(private translate: TranslateService, private router: Router) {}
 
   ngOnInit() {
+    // Set the default language
     this.languageService.currentLanguage$.subscribe(lang => {
       this.currentLang = lang;
       this.translate.use(lang);
       this.dir = lang === 'ar' ? 'rtl' : 'ltr';
     });
 
+    // Scroll to top on route change
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd && isPlatformBrowser(this.platformId)) {
         window.scrollTo(0, 0);
