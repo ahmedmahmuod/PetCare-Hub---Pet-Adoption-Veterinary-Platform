@@ -30,12 +30,12 @@ header {
 .nav-right .signup,
 .nav-right .login {
   color: var(--seconed-color);
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   cursor: pointer;
-  padding: 6px 18px;
-  width: 155px;
+  padding: 10px 0px;
+  width: 100px;
   text-align: center;
-  transition: 0.2s ease;
+  transition: 0.2sease;
 }
 
 .nav-right .signup:hover,
@@ -44,6 +44,7 @@ header {
 }
 
 .nav-right .login {
+  border: 1px solid var(--brand-seconed-color);
   color: var(--brand-color);
   background-color: var(--brand-seconed-color);
 }

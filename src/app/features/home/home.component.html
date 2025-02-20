@@ -1,12 +1,10 @@
-<div class="home-page">
-
+<div class="home-page relative">
     <!-- Hero Section -->
     <section class="relative w-full h-screen">
         <div class="absolute inset-0">
             <img src="backgrounds/home-hero/hero-background.png" alt="Hero Image" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
-    
         <div class="relative flex flex-col items-center justify-center h-full text-center text-white px-4">
             <h1 class="text-4xl sm:text-5xl md:text-5xl font-bold mb-4">
                 {{ 'Pages.Home.Hero.Title' | translate }}
@@ -17,4 +15,11 @@
         </div>
     </section>
 
+    <!-- Services Cards Section -->
+    <section class="services-cards-home">
+        <div (click)="onService(service)" class="service-card" *ngFor="let service of services">
+            <img [src]="service.image" [alt]="service.title">
+            <h1>{{ service.title | translate }}</h1>
+        </div>
+    </section>
 </div>

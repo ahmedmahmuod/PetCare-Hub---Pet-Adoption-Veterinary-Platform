@@ -1,1 +1,97 @@
-/* Hero section */
+/* Services Cards Section */
+.services-cards-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  position: absolute;
+  bottom: -90px;
+  width: 100%;
+}
+
+.services-cards-home .service-card:last-child {
+    background: var(--brand-seconed-color);
+}
+
+.service-card {
+  background: var(--third-color);
+  border-radius: 20px;
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.service-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.service-card h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--brand-color);
+  margin-top: 10px;
+  font-family: var(--font-family);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 1168px) {
+  .services-cards-home {
+    bottom: -250px;
+  }
+}
+@media (max-width: 698px) {
+  .services-cards-home {
+    bottom: -250px;
+  }
+  .service-card {
+    width: 150px;
+  }
+}
+
+@media (max-width: 547px) {
+  .services-cards-home {
+    bottom: -250px;
+  }
+  .service-card {
+    width: 130px;
+  }
+}
+@media (max-width: 488px) {
+  .services-cards-home {
+    bottom: -350px;
+  }
+  .service-card {
+    width: 130px;
+  }
+}
+
+@media (max-width: 337px) {
+  .services-cards-home {
+    bottom: -370px;
+  }
+  .service-card {
+    width: 120px;
+  }
+}
+@media (max-width: 317px) {
+  .services-cards-home {
+    bottom: -570px;
+  }
+  .service-card {
+    width: 120px;
+  }
+}

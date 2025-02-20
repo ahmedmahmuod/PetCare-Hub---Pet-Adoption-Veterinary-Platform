@@ -19,6 +19,13 @@
       "Hero": {
         "Title": "Find a loving local pet sitter or dog Walker",
         "Subtitle": "Who treats your pet like family"
+      },
+      "Services": {
+        "Card_One": "Training",
+        "Card_Two": "Boarding",
+        "Card_Three": "Grooming",
+        "Card_Four": "Walking",
+        "Card_Five": "More"
       }
     }
   },

@@ -44,6 +44,9 @@ footer h3 {
   color: var(--third-color);
   outline: none;
 }
+.email-container input::placeholder {
+  color: var(--third-color);
+}
 
 .email-container button {
   padding: 10px 20px;
@@ -77,6 +80,12 @@ footer h3 {
 .contact-footer,
 .links-footer {
   max-width: 250px;
+}
+
+.contact-info .email {
+  display: flex;
+  align-items: center;
+  gap: 0px 5px;
 }
 
 .contact-info span,
