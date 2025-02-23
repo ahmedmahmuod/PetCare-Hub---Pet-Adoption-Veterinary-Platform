@@ -1,9 +1,9 @@
-<main [dir]="currentLang === 'en' ? 'ltr' : 'rtl'" class="main-content">
+<main [dir]="currentLang === 'en' ? 'ltr' : 'rtl'" class="flex flex-col min-h-screen">
   <!-- Header -->
   <app-header />
 
   <!-- Content -->
-  <div class="content">
+  <div class="bg-seconed-color flex-1 pb-10">
     <router-outlet />
     <app-language-toggle />
   </div>

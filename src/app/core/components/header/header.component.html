@@ -10,10 +10,15 @@
             <div class="page-links hidden md:flex">
                 <ul class="flex items-center gap-x-6">
                     <li routerLinkActive="page-header-active" routerLink="/home">{{'Header.Links.Home' | translate}}</li>
-                    <li>{{'Header.Links.Services' | translate}}</li>
+                    <li routerLinkActive="page-header-active" routerLink="/services">{{'Header.Links.Services' | translate}}</li>
+                    <li>{{'Header.Links.Adoption' | translate}}</li>
                     <li>{{'Header.Links.Vets' | translate}}</li>
-                    <li>{{'Header.Links.Doctors' | translate}}</li>
                     <li>{{'Header.Links.Shop' | translate}}</li>
+                    <li>{{'Header.Links.Blogs' | translate}}</li>
+                    <li class="new-badge-wrapper">
+                        <span class="new-badge" [ngClass]="currentLang === 'en' ? 'new-en' : 'new-ar'">{{'Header.Links.Community.Padge' | translate}}</span>
+                        {{'Header.Links.Community.Title' | translate}}
+                    </li>                    
                 </ul>
             </div>
         </div>
@@ -43,16 +48,21 @@
 
     <!-- Overlay and Mobile Menu -->
     <div *ngIf="isMenuOpen" class="fixed inset-0 bg-black bg-opacity-80 z-50" (click)="toggleMenu()"></div>
-    <div @slideAnimation *ngIf="isMenuOpen" class="mobile-menu fixed top-0 right-0 w-1/2 h-full bg-brand-color text-white shadow-lg z-50">
+    <div @slideAnimation *ngIf="isMenuOpen" class="mobile-menu fixed top-0 right-0 w-2/3 h-full bg-brand-color text-white shadow-lg z-50">
         <div class="p-7">
             <!-- Links -->
-            <div class="mobile-links">
-                <ul class="mb-10">
-                    <li>{{'Header.Links.Home' | translate}}</li>
-                    <li>{{'Header.Links.Services' | translate}}</li>
+            <div class="mobile-links mb-6">
+                <ul>
+                    <li routerLinkActive="page-header-active" routerLink="/home">{{'Header.Links.Home' | translate}}</li>
+                    <li routerLinkActive="page-header-active" routerLink="/services">{{'Header.Links.Services' | translate}}</li>
+                    <li>{{'Header.Links.Adoption' | translate}}</li>
                     <li>{{'Header.Links.Vets' | translate}}</li>
-                    <li>{{'Header.Links.Doctors' | translate}}</li>
                     <li>{{'Header.Links.Shop' | translate}}</li>
+                    <li>{{'Header.Links.Blogs' | translate}}</li>
+                    <li class="new-badge-wrapper">
+                        <span class="new-badge" [ngClass]="currentLang === 'en' ? 'new-en' : 'new-ar'">{{'Header.Links.Community.Padge' | translate}}</span>
+                        {{'Header.Links.Community.Title' | translate}}
+                    </li>  
                 </ul>
             </div>
             <!-- is login or no -->

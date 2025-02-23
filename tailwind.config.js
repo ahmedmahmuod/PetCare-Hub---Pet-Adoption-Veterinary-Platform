@@ -10,6 +10,7 @@ module.exports = {
         'brand-seconed-color': 'var(--brand-seconed-color)',
         'seconed-color': 'var(--seconed-color)',
         'third-color': 'var(--third-color)',
+        'fourth-color': 'var(--fourth-color)',
       },
       fontFamily: {
         cairo: ['var(--font-family)', 'sans-serif'],

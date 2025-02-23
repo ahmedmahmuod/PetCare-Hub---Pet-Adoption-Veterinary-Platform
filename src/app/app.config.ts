@@ -11,13 +11,28 @@ import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideTranslateService, TranslateLoader, TranslateStore } from '@ngx-translate/core';
 
+// Store Ngrx
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
+import { servicesReducer } from './stores/services-store/services.reducer';
+import { ServicesEffects } from './stores/services-store/services.effects';
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideStore({ 
+      services: servicesReducer,
+    }),
+    provideEffects([
+      ServicesEffects
+    ]),
+    provideStoreDevtools({ maxAge: 25, logOnly: false }),
     provideZoneChangeDetection({ eventCoalescing: true }),
+
     provideRouter(routes),
     provideAnimations(),
     provideHttpClient(withInterceptorsFromDi()),

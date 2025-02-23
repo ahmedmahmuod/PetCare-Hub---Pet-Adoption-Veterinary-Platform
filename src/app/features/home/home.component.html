@@ -17,9 +17,13 @@
 
     <!-- Services Cards Section -->
     <section class="services-cards-home">
-        <div (click)="onService(service)" class="service-card" *ngFor="let service of services">
+        <div class="service-card" *ngFor="let service of services">
             <img [src]="service.image" [alt]="service.title">
             <h1>{{ service.title | translate }}</h1>
+        </div>
+        <div routerLink="/services" class="service-card">
+            <img src="logos/pets.png" alt="more">
+            <h1>{{'Pages.Home.Services.Card_Five' | translate}}</h1>
         </div>
     </section>
 </div>

@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { LanguageService } from '../../services/language/language.service';
 
 @Component({
   selector: 'app-header',
@@ -24,9 +25,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
       transition('* => void', [animate('200ms ease-in')]),
   ]),]
 })
-export class HeaderComponent {
-  @Output() languageChange = new EventEmitter<string>();
-
+export class HeaderComponent implements OnInit{
+  private languageService = inject(LanguageService);
+  
+  currentLang: string = 'en';
   isMenuOpen = false;
   isLoggedIn = false;
 
@@ -34,5 +36,9 @@ export class HeaderComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-
+  ngOnInit(): void {
+    this.languageService.currentLanguage$.subscribe(lang => {
+      this.currentLang = lang;
+    });
+  }
 }

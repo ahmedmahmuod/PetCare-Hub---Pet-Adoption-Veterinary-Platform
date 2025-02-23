@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div [dir]="currentLang === 'en' ? 'ltr' : 'rtl'" class="language-toggle">
-      <button (click)="toggleLanguage()" class="toggle-btn" [class.ar]="currentLang === 'ar'" [class.en]="currentLang === 'en'">
+    <div class="language-toggle" [ngClass]="currentLang === 'ar' ? 'language-toggle-ar' : 'language-toggle-en'">
+      <button [dir]="currentLang === 'en' ? 'rlt' : 'ltr'" (click)="toggleLanguage()" class="toggle-btn" [class.ar]="currentLang === 'ar'" [class.en]="currentLang === 'en'">
         <span class="toggle-circle">
           <span class="lang-icon">{{ currentLang === 'ar' ? 'ع' : 'En' }}</span>
         </span>
@@ -19,13 +19,26 @@ import { CommonModule } from '@angular/common';
   styles: [`
     .language-toggle {
       position: fixed;
-      right: -62px;
-      top: 50%;
+      top: 30%;
       transform: translateY(-50%);
       transition: all 0.3s ease;
       z-index: 1000;
     }
-    .language-toggle:hover { right: -5px; }
+
+    .language-toggle-en {
+        right: -62px;
+      }
+      .language-toggle-ar {
+        left: -62px;
+    }
+
+    .language-toggle-en:hover {
+       right: -5px; 
+    }
+    .language-toggle-ar:hover {
+       left: -5px; 
+    }
+
     .toggle-btn {
       display: flex;
       align-items: center;

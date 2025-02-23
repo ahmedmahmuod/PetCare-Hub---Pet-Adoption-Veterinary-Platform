@@ -3,9 +3,14 @@
     "Links": {
       "Home": "Home",
       "Services": "Services",
+      "Adoption": "Adoption",
       "Vets": "Vets",
-      "Doctors": "Doctors",
-      "Shop": "Shop"
+      "Shop": "Shop",
+      "Blogs": "Blogs",
+      "Community": {
+        "Title": "Community",
+        "Padge": "New"
+      } 
     },
     "Btns": {
       "Login": "Login",
@@ -27,7 +32,13 @@
         "Card_Four": "Walking",
         "Card_Five": "More"
       }
+    },
+    
+    "Services": {
+      "Title": "Do you need help with your pets?",
+      "Subtitle": "Book what you're looking for"
     }
+
   },
 
   "Footer": {

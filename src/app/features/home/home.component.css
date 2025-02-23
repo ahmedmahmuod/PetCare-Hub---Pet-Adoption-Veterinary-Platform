@@ -12,6 +12,7 @@
 
 .services-cards-home .service-card:last-child {
     background: var(--brand-seconed-color);
+    cursor: pointer;
 }
 
 .service-card {
@@ -25,7 +26,6 @@
   width: 200px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
-  cursor: pointer;
 }
 
 .service-card img {
