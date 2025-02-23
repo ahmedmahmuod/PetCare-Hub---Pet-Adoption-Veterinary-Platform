@@ -14,7 +14,7 @@ import { Router, RouterLink } from '@angular/router';
   imports: [CommonModule, SkeletonCardComponent],
   template: `
       <div (click)="onServiceClick(service)" *ngFor="let service of services | async" 
-           class="flex items-center justify-center flex-col bg-third-color cursor-pointer rounded-3xl p-5 border-2 border-fourth-color transition-all ease-in-out w-80 hover:-translate-y-1 hover:bg-brand-color group">
+           class="flex items-center justify-center flex-col bg-third-color cursor-pointer rounded-3xl p-5 border-2 border-fourth-color transition-all ease-in-out w-72 hover:-translate-y-1 hover:bg-brand-color group">
         <img class="max-w-40 object-contain mb-3" [src]="service.icon" [alt]="service.name"/>
         <hr class="w-full border-1 border-fourth-color mb-4 opacity-25" />
         <h3 class="text-lg text-brand-color font-bold group-hover:text-brand-seconed-color transition-all">
