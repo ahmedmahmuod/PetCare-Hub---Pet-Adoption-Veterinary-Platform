@@ -18,5 +18,12 @@ export class ServicesService {
       );
   }
 
+  // Get Single Servce details 
+  getSingleService(serviceId: string): Observable<ServiceModel> {
+    return this.http.get<{ updatedDoc: ServiceModel }>(environment.apiUrl + `serviceProfile/get-serviceProfile/${serviceId}`)
+    .pipe(
+      map((response) => response.updatedDoc) 
+    );
+  }
   
 }

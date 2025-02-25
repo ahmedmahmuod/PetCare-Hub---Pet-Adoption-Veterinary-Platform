@@ -36,7 +36,52 @@
     
     "Services": {
       "Title": "Do you need help with your pets?",
-      "Subtitle": "Book what you're looking for"
+      "Subtitle": "Book what you're looking for",
+      "Single_Service": {
+        "Booking_Section": {
+          "Form": {
+            "Price": {
+              "From": "From",
+              "Currncy": "L.E",
+              "To": "Up to",
+              "Duration": "Per Night"
+            },
+            "Inputs": {
+              "City": {
+                "Title": "City",
+                "Placeholder": "Enter your city",
+                "Error": "City is required."
+              },
+              "Duration": {
+                "Title": "Duration",
+                "Placeholder": "Select duration",
+                "Values": {
+                  "One": "Full Day",
+                  "Tow": "Half Day",
+                  "Three": "More than 1 Day"
+                },
+                "Error": "Duration is required."
+              },
+              "Date": {
+                "Title": "Date",
+                "Error": "Date is required."
+              }
+            },
+            "Btn": "Make Reservation"
+          }
+        },
+        "Tabs": {
+          "Description": "Description",
+          "Reviews": "Reviews",
+          "Reviews_Page": {
+            "Title": "Write a Review",
+            "Placeholder": "Your Review",
+            "Error": "Review must be at least 6 characters long",
+            "Btn": "Submit Review",
+            "Is_Empty": "No Reviews in this service yet!"
+          }
+        }
+      }
     }
 
   },

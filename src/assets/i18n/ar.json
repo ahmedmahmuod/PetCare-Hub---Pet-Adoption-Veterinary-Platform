@@ -36,9 +36,53 @@
 
     "Services": {
       "Title": "هل تحتاج إلى مساعدة مع حيواناتك الأليفة؟",
-      "Subtitle": "احجز ما تبحث عنه"
+      "Subtitle": "احجز ما تبحث عنه",
+      "Single_Service": {
+        "Booking_Section": {
+          "Form": {
+            "Price": {
+              "From": "من",
+              "Currncy": "ج.م",
+              "To": "حتى",
+              "Duration": "لكل ليلة"
+            },
+            "Inputs": {
+              "City": {
+                "Title": "المدينة",
+                "Placeholder": "أدخل مدينتك",
+                "Error": "المدينة مطلوبة."
+              },
+              "Duration": {
+                "Title": "المدة",
+                "Placeholder": "اختر المدة",
+                "Values": {
+                  "One": "يوم كامل",
+                  "Tow": "نصف يوم",
+                  "Three": "أكثر من يوم"
+                },
+                "Error": "المدة مطلوبة."
+              },
+              "Date": {
+                "Title": "التاريخ",
+                "Error": "التاريخ مطلوب."
+              }
+            },
+            "Btn": "احجز الآن"
+          }
+        },
+        "Tabs": {
+          "Description": "الوصف",
+          "Reviews": "التقييمات",
+          "Reviews_Page": {
+            "Title": "كتابة تقييم",
+            "Placeholder": "تقييمك",
+            "Error": "يجب أن يحتوي التقييم على 6 أحرف على الأقل",
+            "Btn": "إرسال التقييم",
+            "Is_Empty": "لا توجد تقييمات لهذه الخدمة بعد"
+          }
+        }
+      }
     }
-
   },
   
   "Footer": {
