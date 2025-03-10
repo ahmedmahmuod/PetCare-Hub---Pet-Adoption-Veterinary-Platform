@@ -11,8 +11,8 @@
 }
 
 .services-cards-home .service-card:last-child {
-    background: var(--brand-seconed-color);
-    cursor: pointer;
+  background: var(--brand-seconed-color);
+  cursor: pointer;
 }
 
 .service-card {
@@ -52,6 +52,9 @@
   .services-cards-home {
     bottom: -250px;
   }
+  .hero-section {
+    margin-bottom: 250px;
+  }
 }
 @media (max-width: 698px) {
   .services-cards-home {
@@ -59,6 +62,10 @@
   }
   .service-card {
     width: 150px;
+  }
+
+  .hero-section {
+    margin-bottom: 250px;
   }
 }
 
@@ -70,9 +77,10 @@
     width: 130px;
   }
 }
+
 @media (max-width: 488px) {
   .services-cards-home {
-    bottom: -350px;
+    bottom: -250px;
   }
   .service-card {
     width: 130px;
@@ -81,10 +89,14 @@
 
 @media (max-width: 337px) {
   .services-cards-home {
-    bottom: -370px;
+    bottom: -270px;
   }
   .service-card {
     width: 120px;
+  }
+
+  .hero-section {
+    margin-bottom: 300px;
   }
 }
 @media (max-width: 317px) {
@@ -94,4 +106,36 @@
   .service-card {
     width: 120px;
   }
+}
+
+.icons {
+  width: 50px;
+  height: 50px;
+  background-color: var(--brand-color);
+  color: var(--seconed-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.down-content .up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.down-content .up .single {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--fourth-color);
+  border-radius: 8px;
+}
+
+.down-content .up .single h3 {
+  padding: 10px 20px;
+  color: var(--fourth-color);
 }

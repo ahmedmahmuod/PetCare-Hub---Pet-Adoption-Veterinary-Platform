@@ -31,7 +31,17 @@
         "Card_Three": "Grooming",
         "Card_Four": "Walking",
         "Card_Five": "More"
+      },
+      "Static_Section": {
+        "Title": "Scooby made it easy for you",
+        "Subtitle": "Search and connect with trusted pet services providers. It's easy as 1, 2, 3.",
+        "Cards": {
+          "Card_One": "Find pet Service provider",
+          "Card_Two": "Arrange a meet & greet",
+          "Card_Three": "Book your appointment"
+        }
       }
+
     },
     
     "Services": {

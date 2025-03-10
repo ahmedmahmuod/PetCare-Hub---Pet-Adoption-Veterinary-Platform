@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as ServicesActions from '../../../stores/services-store/services.actions';
 import { selectServices, selectServicesLoading } from '../../../stores/services-store/services.selector';
-import { filter, Observable, take } from 'rxjs';
+import { take } from 'rxjs';
 import { ServiceModel } from '../../../core/models/service/service.model';
 import { SkeletonCardComponent } from "../skeletons/card-services/skelton-services-card.component";
 import { Router } from '@angular/router';
@@ -41,7 +41,6 @@ export class ServicesCartComponent {
         }
       });
   }
-  
   
   // On service click
   onServiceClick(service: ServiceModel) {    

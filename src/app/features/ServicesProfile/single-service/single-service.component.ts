@@ -42,7 +42,7 @@ export class SingleServiceComponent implements OnInit {
   serviceId!: string;
   serviceData!: ServiceModel;
   faqsArray: { question: string; answer: string }[] = [];
-  isLogged = false;
+  isLogged = true;
   activeTab = 'description';
   egyptGovernoratesArray = egyptGovernoratesArrayen;
   activeIndex: number = -1;

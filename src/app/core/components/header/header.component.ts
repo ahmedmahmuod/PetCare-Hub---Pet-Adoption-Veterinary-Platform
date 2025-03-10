@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit{
   
   currentLang: string = 'en';
   isMenuOpen = false;
-  isLoggedIn = false;
+  isLoggedIn = true;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
