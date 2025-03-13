@@ -50,7 +50,7 @@
 /* Responsive Design */
 @media (max-width: 1168px) {
   .services-cards-home {
-    bottom: -250px;
+    bottom: -190px;
   }
   .hero-section {
     margin-bottom: 250px;
@@ -58,7 +58,7 @@
 }
 @media (max-width: 698px) {
   .services-cards-home {
-    bottom: -250px;
+    bottom: -190px;
   }
   .service-card {
     width: 150px;
@@ -71,7 +71,7 @@
 
 @media (max-width: 547px) {
   .services-cards-home {
-    bottom: -250px;
+    bottom: -190px;
   }
   .service-card {
     width: 130px;
@@ -101,7 +101,7 @@
 }
 @media (max-width: 317px) {
   .services-cards-home {
-    bottom: -570px;
+    bottom: -270px;
   }
   .service-card {
     width: 120px;

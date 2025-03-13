@@ -44,6 +44,11 @@
 
     },
     
+    "Blogs": {
+      "Title": "Blogs",
+      "Description": "Because we love to talk about pets."
+    },
+    
     "Services": {
       "Title": "Do you need help with your pets?",
       "Subtitle": "Book what you're looking for",

@@ -9,5 +9,7 @@ export const routes: Routes = [
           { path: ':type', loadComponent: () => import('./features/ServicesProfile/single-service/single-service.component').then(m => m.SingleServiceComponent) }
         ]
     },
+    { path: 'blogs', loadComponent: () => import('./features/blogs/blogs.component').then(m => m.BlogsComponent) },
 
-];
+    { path: '**', loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent) } // default path wait to add 404 page
+  ];

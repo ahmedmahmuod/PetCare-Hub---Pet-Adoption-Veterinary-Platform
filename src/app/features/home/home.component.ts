@@ -7,11 +7,13 @@ import { RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import * as ServicesActions from '../../stores/services-store/services.actions';
 import { selectServices } from '../../stores/services-store/services.selector';
+import { CarouselCircularDemo } from "../../shared/components/carousel/code/carousel.component";
+import { PageTitleComponent } from "../../shared/components/page-title/pageTitle.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, TranslateModule, RouterLink],
+  imports: [CommonModule, TranslateModule, RouterLink, CarouselCircularDemo, PageTitleComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
