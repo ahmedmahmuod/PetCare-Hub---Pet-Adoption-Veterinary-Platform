@@ -4,7 +4,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { ServicesCartComponent } from '../../../shared/components/services-cards/servicesCard.component';
 import { SkeletonModule } from 'primeng/skeleton';
-import { SkeletonCardComponent } from './../../../shared/components/skeletons/card-services/skelton-services-card.component';
 
 @Component({
   selector: 'app-all-services',

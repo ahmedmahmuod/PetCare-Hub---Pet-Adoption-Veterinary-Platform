@@ -33,7 +33,7 @@
         "Card_Five": "More"
       },
       "Static_Section": {
-        "Title": "Scooby made it easy for you",
+        "Title": "Scooby made easy for you",
         "Subtitle": "Search and connect with trusted pet services providers. It's easy as 1, 2, 3.",
         "Cards": {
           "Card_One": "Find pet Service provider",
@@ -97,6 +97,46 @@
           }
         }
       }
+    },
+
+    "Adoption": {
+      "Title": "Find your new best friend",
+      "Adoption_Cards": {
+        "Card_One": "Dogs",
+        "Card_Two": "Cats",
+        "Card_Three": "Shelters & Rescues"
+      },
+
+      "Pets_For_Adoption": {
+        "Title": "Pets for Adoption",
+        "More": {
+          "Title": "More Pets availabile on Scooby",
+          "Subtitle": "Meet them now"
+        }
+      },
+      "Planning_to_Adopt": {
+        "Title": "Planning to Adopt",
+        "Btn": "Learn More",
+        "Cards": {
+          "Card_One": {
+            "Title": "Checklist for new adopters",
+            "Subtitle": "Make the adoption transition as smooth as possible."
+          },
+          "Card_Two": {
+            "Title": "COVID-19 Resources",
+            "Subtitle": "Find out how you can help dogs and cats."
+          },
+          "Card_Three": {
+            "Title": "Pet adoption FAQs",
+            "Subtitle": "Answer all questions you haven’t thought of for your adoption."
+          }
+        }
+      },
+
+      "Success_Adoptions": {
+        "Title": "Successful Adoptions",
+        "Subtitle": "Slide to see some of the animals we helped rehome in Egypt."
+      }
     }
 
   },
@@ -123,5 +163,9 @@
       "Text": "All rights reserved © 2025 for",
       "Link": "(Developer)"
     }
+  },
+
+  "Global": {
+    "View_Btn": "View All"
   }
 }

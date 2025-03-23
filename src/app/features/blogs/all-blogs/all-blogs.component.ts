@@ -1,9 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { BlogsModel } from '../../../core/models/blogs/blogs.model';
-import { Observable, of, take } from 'rxjs';
-import { loadBlogs } from '../../../stores/blogs-store/blogs.actions';
+import { Observable, take } from 'rxjs';
 import { selectBlogs, selectBlogsLoading } from '../../../stores/blogs-store/blogs.selector';
 import * as BlogsActions from '../../../stores/blogs-store/blogs.actions';
 import { SkeletonCardComponent } from "../../../shared/components/skeletons/card-services/skelton-services-card.component";

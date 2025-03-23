@@ -2,18 +2,19 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { ServicesService } from '../../core/services/services/services.service';
-import { ServiceModel } from '../../core/models/service/service.model';
 import { RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
-import * as ServicesActions from '../../stores/services-store/services.actions';
-import { selectServices } from '../../stores/services-store/services.selector';
-import { CarouselCircularDemo } from "../../shared/components/carousel/code/carousel.component";
 import { PageTitleComponent } from "../../shared/components/page-title/pageTitle.component";
+import { HeroSectionComponent } from "../../shared/components/hero-section/hero-section.component";
+import { GlobalCardComponent } from "../../shared/components/global-card/global-card.component";
+import { SliderComponent } from "../../shared/components/slider/slicder.component";
+import { AllBlogsComponent } from "../blogs/all-blogs/all-blogs.component";
+import { CustomButtonComponent } from "../../shared/components/buttons/global-btn.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, TranslateModule, RouterLink, CarouselCircularDemo, PageTitleComponent],
+  imports: [CommonModule, TranslateModule, RouterLink, PageTitleComponent, HeroSectionComponent, GlobalCardComponent, SliderComponent, AllBlogsComponent, CustomButtonComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

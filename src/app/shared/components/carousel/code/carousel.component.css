@@ -1,8 +1,0 @@
-::ng-deep .p-carousel .p-carousel-prev,
-::ng-deep .p-carousel .p-carousel-next {
-    color: var(--seconed-color);
-    background-color: var(--brand-color);
-    border-radius: 50%;
-    margin: 20px;
-    padding: 20px;
-}

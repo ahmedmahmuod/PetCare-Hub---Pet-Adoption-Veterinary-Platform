@@ -1,69 +1,71 @@
-<div class="home-page relative">
+<div class="home-page min-h-screen">
     <!-- Hero Section -->
-    <section class="relative w-full h-screen hero-section">
-        <div class="absolute inset-0">
-            <img src="backgrounds/home-hero/hero-background.png" alt="Hero Image" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-        </div>
-        <div class="relative flex flex-col items-center justify-center h-full text-center text-white px-4">
-            <h1 class="text-4xl sm:text-5xl md:text-5xl font-bold mb-4">
-                {{ 'Pages.Home.Hero.Title' | translate }}
-            </h1>
-            <p class="text-lg sm:text-xl md:text-2xl">
-                {{ 'Pages.Home.Hero.Subtitle' | translate }}            
-            </p>
-        </div>
-        
-        <!-- Services Cards Section -->
-        <div class="services-cards-home">
-            <div class="service-card" *ngFor="let service of services">
-                <img [src]="service.image" [alt]="service.title">
-                <h1>{{ service.title | translate }}</h1>
-            </div>
-            <div routerLink="/services" class="service-card">
-                <img src="logos/pets.png" alt="more">
-                <h1>{{'Pages.Home.Services.Card_Five' | translate}}</h1>
-            </div>
-        </div>
-    </section>
+    <div class="hero-section relative">
+      <app-hero-section imageUrl="backgrounds/home-hero/hero-background.png" [title]="('Pages.Home.Hero.Title' | translate)" [description]="('Pages.Home.Hero.Subtitle' | translate)"/>
 
+      <!-- Services Cards Section -->
+      <section class="services-section">
+          <app-global-card *ngFor="let service of services" [imageUrl]="service.image" [title]="service.title | translate" class="service-card"/>
+          <app-global-card routerLink="/services" imageUrl="logos/pets.png" [title]="('Pages.Home.Services.Card_Five' | translate)" [linkStyled1]="true" class="service-card"/>
+      </section>
+    </div>
+      
 
-    <!-- Static Section -->
-    <section class="mt-40 bg-third-color p-10 sm:p-32 flex flex-col justify-center items-center text-center">
-        <div class="up-content flex flex-col gap-y-3">
-            <h2 class="text-3xl font-bold text-brand-color">{{'Pages.Home.Static_Section.Title' | translate}}</h2>
-            <p class="mb-8 text-fourth-color">{{'Pages.Home.Static_Section.Subtitle' | translate}}</p>
+    <!-- Features Section -->
+    <section class="features-section py-16 md:py-24 bg-third-color">
+      <div class="px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <app-page-title [title]="('Pages.Home.Static_Section.Title' | translate)"/>
+          <p class="text-fourth-color text-lg md:text-xl leading-relaxed">
+            {{'Pages.Home.Static_Section.Subtitle' | translate}}
+          </p>
         </div>    
 
-        <div class="down-content">
-            <div class="up">
-                <div class="single">
-                    <span class="icons"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <h3>
-                        {{'Pages.Home.Static_Section.Cards.Card_One' | translate}}
-                    </h3>
-                </div>
-                <div class="single">
-                    <span class="icons"><i class="fa-solid fa-calendar-days"></i></span>
-                    <h3>
-                        {{'Pages.Home.Static_Section.Cards.Card_Two' | translate}}
-                    </h3>
-                </div>
-                <div class="single">
-                    <span class="icons"><i class="fa-solid fa-credit-card"></i></span>
-                    <h3>
-                        {{'Pages.Home.Static_Section.Cards.Card_Three' | translate}}
-                    </h3>
-                </div>
+        <div class="features-container max-w-7xl mx-auto">
+          <!-- Feature Card 1 -->
+          <div class="feature-card">
+            <div class="icon-container">
+              <i class="fa-solid fa-magnifying-glass"></i>
             </div>
+            <h3 class="feature-title">
+              {{'Pages.Home.Static_Section.Cards.Card_One' | translate}}
+            </h3>
+          </div>
+
+          <!-- Feature Card 2 -->
+          <div class="feature-card">
+            <div class="icon-container">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <h3 class="feature-title">
+              {{'Pages.Home.Static_Section.Cards.Card_Two' | translate}}
+            </h3>
+          </div>
+
+          <!-- Feature Card 3 -->
+          <div class="feature-card">
+            <div class="icon-container">
+              <i class="fa-solid fa-credit-card"></i>
+            </div>
+            <h3 class="feature-title">
+              {{'Pages.Home.Static_Section.Cards.Card_Three' | translate}}
+            </h3>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Blogs Section -->
-    <section class="container mx-auto">
-        <app-page-title [title]="('Pages.Blogs.Title' | translate)" [description]="('Pages.Blogs.Description' | translate)"/>
-        <carousel-circular-demo/>
-        
+    <section class="mt-20">
+      <div class="container mx-auto px-4">
+        <app-page-title [title]="('Pages.Blogs.Title' | translate)" [description]="('Pages.Blogs.Description' | translate)"class="mb-12"/>
+        <app-slider [items]="[2, 3, 4, 5, 6]">
+          <ng-template #itemTemplate let-pet>
+              <app-all-blogs class="flex"/>
+          </ng-template>
+          
+          <app-global-button slider-footer [routerLink]="'/blogs'" [text]="'Global.View_Btn'" buttonStyle="dark-bg"/>
+        </app-slider>
+      </div>
     </section>
-
-</div>
+  </div>
