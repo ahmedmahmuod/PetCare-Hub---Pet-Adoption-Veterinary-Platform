@@ -7,9 +7,12 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { PageTitleComponent } from "../../shared/components/page-title/pageTitle.component";
 import { AdoptionSectionComponent } from "./adoption-section/adoption-section.component";
 import { SliderComponent } from "../../shared/components/slider/slicder.component";
-import { Pet, PetCardComponent } from "./pet-card/pet-card.component";
 import { AllBlogsComponent } from "../blogs/all-blogs/all-blogs.component";
 import { CustomButtonComponent } from "../../shared/components/buttons/global-btn.component";
+import { AdoptionCardComponent } from "./adoption-section/adoption-card.compontnet";
+import { Pet } from '../../core/models/pets/pet.model';
+import { PetsService } from '../../core/services/pets/pets.services';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-adoption',
@@ -25,26 +28,48 @@ import { CustomButtonComponent } from "../../shared/components/buttons/global-bt
     AdoptionSectionComponent,
     SliderComponent,
     AllBlogsComponent,
-    PetCardComponent,
-    CustomButtonComponent
+    CustomButtonComponent,
+    AdoptionCardComponent,
 ],
   templateUrl: './adoption.component.html',
   styleUrls: ['./adoption.component.css'],
 })
-export class AdoptionComponent {
+export class AdoptionComponent implements OnInit {
   private router = inject(Router);
+  private petService = inject(PetsService);
+
+  pets$!: Observable<Pet[]>
+  isOutletActive = false;
+
+  ngOnInit(): void {
+    this.petService.getPetsType('successfullyAdaped').subscribe((res) => {      
+      this.pets$ = of(res.data);
+    })  
+  }
+
+  onOutletActivated() {
+    this.isOutletActive = true;
+  }
+
+  onOutletDeactivated() {
+    this.isOutletActive = false;
+  }
+
+  isCardActive(route: string): boolean {
+    return this.router.url === route;
+  }
 
   // Adoption cards data
   adoptions_data = [
     {
       title: 'Pages.Adoption.Adoption_Cards.Card_One',
-      image: 'adoption/cards/cat.png',
+      image: 'adoption/cards/dog.png',
       type: 'dogs',
       rout: '/adoption/dogs',
     },
     {
       title: 'Pages.Adoption.Adoption_Cards.Card_Two',
-      image: 'adoption/cards/dog.png',
+      image: 'adoption/cards/cat.png',
       type: 'cats',
       rout: '/adoption/cats',
     },
@@ -53,31 +78,6 @@ export class AdoptionComponent {
       image: 'adoption/cards/shelters.png',
       type: 'shelters',
       rout: '/adoption/shelters',
-    },
-  ];
-
-
-  isCardActive(route: string): boolean {
-    return this.router.url === route;
-  }
-
-
-
-  adoptions = [
-    {
-      title: 'Poncho',
-      image: 'adoption/adop1.png',
-      type: 'Terrier Mix',
-    },
-    {
-      title: 'Biscuit',
-      image: 'adoption/adop2.png',
-      type: 'Labrador Retriever',
-    },
-    {
-      title: 'Tanzi',
-      image: 'adoption/adop3.png',
-      type: 'Abyssinian',
     },
   ];
 
@@ -100,87 +100,4 @@ export class AdoptionComponent {
     }
   ]
 
-  pets: Pet[] = [
-    {
-      id: 2,
-      name: 'Max',
-      type: 'dog',
-      gender: 'male',
-      weight: 12.3,
-      imageUrl: 'https://placedog.net/800/600'
-    },
-    {
-      id: 4,
-      name: 'Rocky',
-      type: 'dog',
-      gender: 'male',
-      weight: 15.7,
-      imageUrl: 'https://placedog.net/801/600'
-    },
-
-    {
-      id: 6,
-      name: 'Lucy',
-      type: 'dog',
-      gender: 'female',
-      weight: 8.9,
-      imageUrl: 'https://placedog.net/802/600'
-    },
-    {
-      id: 8,
-      name: 'Charlie',
-      type: 'dog',
-      gender: 'male',
-      weight: 10.5,
-      imageUrl: 'https://placedog.net/803/600'
-    },
-    {
-      id: 10,
-      name: 'Bailey',
-      type: 'dog',
-      gender: 'female',
-      weight: 13.2,
-      imageUrl: 'https://placedog.net/804/600'
-    },
-    {
-      id: 12,
-      name: 'Cooper',
-      type: 'dog',
-      gender: 'male',
-      weight: 14.8,
-      imageUrl: 'https://placedog.net/805/600'
-    },
-    {
-      id: 14,
-      name: 'Daisy',
-      type: 'dog',
-      gender: 'female',
-      weight: 11.7,
-      imageUrl: 'https://placedog.net/806/600'
-    },
-    {
-      id: 16,
-      name: 'Molly',
-      type: 'dog',
-      gender: 'female',
-      weight: 9.8,
-      imageUrl: 'https://placedog.net/807/600'
-    },
-    {
-      id: 18,
-      name: 'Tucker',
-      type: 'dog',
-      gender: 'male',
-      weight: 16.2,
-      imageUrl: 'https://placedog.net/808/600'
-    },
-    {
-      id: 20,
-      name: 'Bear',
-      type: 'dog',
-      gender: 'male',
-      weight: 17.5,
-      imageUrl: 'https://placedog.net/809/600'
-    }
-  ];
 }

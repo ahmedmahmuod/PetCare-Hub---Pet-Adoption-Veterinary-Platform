@@ -35,9 +35,14 @@ export class AppComponent implements OnInit {
     // Scroll to top on route change
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd && isPlatformBrowser(this.platformId)) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });  // التمرير السلس
-
+        const currentRoute = this.router.routerState.snapshot.root.firstChild;
+        const disableScroll = currentRoute?.data['disableScroll'];
+    
+        if (!disableScroll) {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
       }
     });
+
   }
 }

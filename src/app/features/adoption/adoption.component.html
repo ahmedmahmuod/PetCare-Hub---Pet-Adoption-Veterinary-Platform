@@ -10,12 +10,14 @@
 </section>
 
 <!-- Router outlet -->
-<router-outlet />
+<router-outlet (activate)="onOutletActivated()" (deactivate)="onOutletDeactivated()" />
 
-<!-- Pets for Adoption -->
-<section class="container mx-auto">
+<!-- Pets For Adoption -->
+<section *ngIf="!isOutletActive" class="container mx-auto">
     <app-page-title [title]="('Pages.Adoption.Pets_For_Adoption.Title' | translate)"/>
-    <app-adoption-section [items]="adoptions" [moreText]="('Pages.Adoption.Pets_For_Adoption.More.Title' | translate)" [moreSubtext]="('Pages.Adoption.Pets_For_Adoption.More.Subtitle' | translate)"/>
+    <app-adoption-section [isStore]="true" type="getallpets" 
+        [moreText]="('Pages.Adoption.Pets_For_Adoption.More.Title' | translate)" 
+        [moreSubtext]="('Pages.Adoption.Pets_For_Adoption.More.Subtitle' | translate)"/>
 </section>
 
 <!-- Planning to Adopt -->
@@ -36,14 +38,15 @@
 <!-- Successful Adoption -->
 <section class="bg-brand-color my-10 py-10">
     <app-page-title class="m-10" [desDark]="true" [titleDark]="true" [description]="('Pages.Adoption.Success_Adoptions.Subtitle' | translate)" [title]="('Pages.Adoption.Success_Adoptions.Title' | translate)"/>
-    <app-slider [items]="pets">
-        <ng-template #itemTemplate let-pet>
-            <app-pet-card [pet]="pet" class="flex"/>
+    <app-slider [items]="[1,1,1,1,1,1]">
+        <ng-template #itemTemplate let-item>
+             <app-card-adoption class="flex" [items]="(pets$ | async) ?? []" displayMode="slider"/>
         </ng-template>
 
-        <app-global-button slider-footer [text]="'Global.View_Btn'" buttonStyle="light-bg"/>
+        <app-global-button routerLink="/adoption/successfullyAdaped" slider-footer [text]="'Global.View_Btn'" buttonStyle="light-bg"/>
     </app-slider>
 </section>
+
 
 <!-- Blogs Section -->
 <section class="my-10">

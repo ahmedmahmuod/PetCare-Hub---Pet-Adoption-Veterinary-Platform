@@ -1,4 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,8 +16,9 @@ import { CommonModule } from '@angular/common';
   styles: [`
     .favorite-icon {
       position: absolute;
-      top: 8px;
-      right: 8px;
+      top: -8px;
+      right: -26px;
+      inset-inline-end: -8px;
       background: white;
       color: var(--brand-color);
       border: none;
@@ -35,15 +37,13 @@ import { CommonModule } from '@angular/common';
     .favorite-icon:hover {
       transform: scale(1.1);
     }
-
-    .favorite-icon.active svg {
-
-    }
   `]
 })
 export class FavoriteIconComponent {
   @Input() isActive = false;
   @Output() favoriteChange = new EventEmitter<boolean>();
+
+  constructor(@Inject(DOCUMENT) private document: Document) {}
 
   toggleFavorite() {
     this.isActive = !this.isActive;

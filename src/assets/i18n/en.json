@@ -107,13 +107,84 @@
         "Card_Three": "Shelters & Rescues"
       },
 
+      "Filter": {
+        "Title": "Filter by Pet Type",
+        "Values": {
+          "All": "All Pets",
+          "Dogs": "Dogs",
+          "Cats": "Cats"
+        },
+        "Empty": "No pets match the filter."
+      },
+
+      "Card": {
+        "Dog": "Dog",
+        "Cat": "Cat",
+        "Kg": "Kg",
+        "Gender": {
+          "Male": "Male",
+          "Female": "Female"
+        }
+      },
+      
       "Pets_For_Adoption": {
         "Title": "Pets for Adoption",
         "More": {
           "Title": "More Pets availabile on Scooby",
-          "Subtitle": "Meet them now"
+          "Subtitle": "Meet them"
         }
       },
+
+      "Dogs": {
+        "Dogs_For_Adoption": {
+          "Title": "Dogs for Adoption",
+          "More": {
+            "Title": "More Dogs availabile on Scooby",
+            "Subtitle": "Meet them"
+          }
+        },
+  
+        "Top_Collection_Of_Dogs": {
+          "Title": "Top collection of dogs",
+          "More": {
+            "Title": "More Dogs availabile on Scooby",
+            "Subtitle": "Meet them"
+          }
+        },
+        "Best_Dogs_for_kids": {
+          "Title": "Best Dogs for kids",
+          "More": {
+            "Title": "More Dogs availabile on Scooby",
+            "Subtitle": "Meet them"
+          }
+        }
+      },
+
+      "Cats": {
+        "Cats_For_Adoption": {
+          "Title": "Cats for Adoption",
+          "More": {
+            "Title": "More Cats availabile on Scooby",
+            "Subtitle": "Meet them"
+          }
+        },
+  
+        "Top_Collection_Of_Cats": {
+          "Title": "Top collection of cats",
+          "More": {
+            "Title": "More Cats availabile on Scooby",
+            "Subtitle": "Meet them"
+          }
+        },
+        "Best_Cats_for_kids": {
+          "Title": "Best Cats for kids",
+          "More": {
+            "Title": "More Cats availabile on Scooby",
+            "Subtitle": "Meet them"
+          }
+        }
+      },
+
       "Planning_to_Adopt": {
         "Title": "Planning to Adopt",
         "Btn": "Learn More",
@@ -136,6 +207,19 @@
       "Success_Adoptions": {
         "Title": "Successful Adoptions",
         "Subtitle": "Slide to see some of the animals we helped rehome in Egypt."
+      },
+
+      "Shelter_Details": {
+        "Titles": {
+          "Contact": "Contact",
+          "Location": "Location",
+          "Work_Hours": "Work Hours",
+          "About": "About Us",
+          "Gallery_Shelter": "Gallery Shelter",
+          "Our_Pets": "Our Pets",
+          "Description_Reviews": "Description & Reviews",
+          "Reviews": "Reviews"
+        }
       }
     }
 

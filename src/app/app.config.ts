@@ -19,6 +19,9 @@ import { servicesReducer } from './stores/services-store/services.reducer';
 import { ServicesEffects } from './stores/services-store/services.effects';
 import { blogsReducer } from './stores/blogs-store/blogs.reducer';
 import { BlogsEffects } from './stores/blogs-store/blogs.effects';
+import { petsReducer } from './stores/pets-store/pets.reducer';
+import { PetsEffects } from './stores/pets-store/pets.effects';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -28,11 +31,13 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideStore({ 
       services: servicesReducer,
-      blogs: blogsReducer
+      blogs: blogsReducer,
+      pets: petsReducer
     }),
     provideEffects([
       ServicesEffects,
-      BlogsEffects
+      BlogsEffects,
+      PetsEffects
     ]),
     provideStoreDevtools({ maxAge: 25, logOnly: false }),
     provideZoneChangeDetection({ eventCoalescing: true }),

@@ -14,21 +14,21 @@
 /* Responsive Design */
 @media (max-width: 804px) {
   .hero-section .cards {
-    bottom: -27%;
+    bottom: -24%;
   }
 
   .hero-section {
-    margin-bottom: 350px;
+    margin-bottom: 300px;
   }
 }
 
 @media (max-width: 535px) {
   .hero-section .cards {
-    bottom: -45%;
+    bottom: -41%;
   }
 
   .hero-section {
-    margin-bottom: 500px;
+    margin-bottom: 450px;
   }
 }
 
@@ -109,4 +109,3 @@ button:hover {
     width: calc(33.33% - 1rem);
   }
 }
-

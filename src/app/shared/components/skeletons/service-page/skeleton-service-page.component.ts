@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <div class="booking-container">
+    <div class="booking-container container">
       <div class="image-gallery skeleton">
         <div class="main-image-skeleton"></div>
         <div class="thumbnails">
@@ -61,19 +61,19 @@ import { FormsModule } from '@angular/forms';
 
     .booking-container {
       display: flex;
-      max-width: 1200px;
-      margin: 2rem auto;
+      margin: .5rem auto;
       gap: 2rem;
       padding: 1rem;
     }
 
     .image-gallery {
-      flex: 1;
+      flex: 2;
+      min-width: 850px;
     }
 
     .main-image-skeleton {
       width: 100%;
-      height: 400px;
+      height: 70vh;
       background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
       background-size: 1000px 100%;
       animation: shimmer 2s infinite linear;
@@ -98,9 +98,7 @@ import { FormsModule } from '@angular/forms';
     .booking-form {
       flex: 1;
       padding: 2rem;
-      background: white;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .title-skeleton {
