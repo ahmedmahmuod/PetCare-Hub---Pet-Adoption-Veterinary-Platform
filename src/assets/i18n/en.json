@@ -250,6 +250,12 @@
   },
 
   "Global": {
-    "View_Btn": "View All"
+    "View_Btn": "View All",
+
+    "Pagination": {
+      "Prev": "Previous",
+      "Next": "Next"
+    }
+    
   }
 }

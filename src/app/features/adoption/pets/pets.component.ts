@@ -12,36 +12,47 @@ import { Pet } from '../../../core/models/pets/pet.model';
 import * as PetsActions from '../../../stores/pets-store/pets.actions';
 import { ActivatedRoute } from '@angular/router';
 import { AdoptionSkeletonComponent } from "../../../shared/components/skeletons/adoption-card/adoption-skelton.component";
+import { PaginationComponent } from '../../../shared/components/pagination/pagination.component';
 
 @Component({
   selector: 'app-pets',
   templateUrl: './pets.component.html',
   styleUrls: ['./pets.component.css'],
   standalone: true,
-  imports: [PageTitleComponent, TranslateModule, CommonModule, AdoptionCardComponent, PetFilterComponent, AdoptionSkeletonComponent],
+  imports: [
+    PageTitleComponent,
+    TranslateModule,
+    CommonModule,
+    AdoptionCardComponent,
+    PetFilterComponent,
+    AdoptionSkeletonComponent,
+    PaginationComponent,
+  ],
 })
 export class PetsComponent implements OnInit {
   private store = inject(Store);
   private route = inject(ActivatedRoute);
-  private destroyRef = inject(DestroyRef)
+  private destroyRef = inject(DestroyRef);
 
   type!: string;
   title!: string;
   originalPets$: Observable<Pet[]> = of([]);
   filteredPets$: Observable<Pet[]> = of([]);
+  totalPages$: Observable<number> = of(0);
+  loading = signal<boolean>(false);
   currentFilter: 'all' | 'dog' | 'cat' = 'all';
-  loading =  signal<boolean>(false);
   
+  currentPage = signal(1);
+  paginatedPets$: Observable<Pet[]> = of([]);
+  pageSize = 15;
 
   ngOnInit(): void {
-    this.route.paramMap.pipe(
-      takeUntilDestroyed(this.destroyRef),
-      tap(() => this.loading.set(true))
-    ).subscribe(params => {
-      this.type = params.get('pets') || '';
-      this.loadPets();
-    });
-
+    this.route.paramMap
+      .pipe(takeUntilDestroyed(this.destroyRef), tap(() => this.loading.set(true)))
+      .subscribe(params => {
+        this.type = params.get('pets') || '';
+        this.loadPets();
+      });
 
     const titlesMap: { [key: string]: string } = {
       getallpets: 'Pages.Adoption.Pets_For_Adoption.Title',
@@ -54,29 +65,62 @@ export class PetsComponent implements OnInit {
       successfullyAdaped: 'Pages.Adoption.Success_Adoptions.Title'
     };
     this.title = titlesMap[this.type] || 'Default Title';
-
   }
-  
+
   loadPets() {
     this.store.dispatch(PetsActions.loadPets({ petType: this.type }));
 
-    // Use the loading selector from your store if available
-    this.store.select(selectPetsLoading).subscribe(isLoading => {
-      this.loading.set(isLoading);
-    });
+    this.store.select(selectPetsLoading)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(isLoading => this.loading.set(isLoading));
 
     this.originalPets$ = this.store.select(selectPets);
     this.filteredPets$ = this.originalPets$;
-  }
 
+    this.filteredPets$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        this.currentPage.set(1);
+        this.updatePaginatedPets();
+      });
+  }
 
   onFilterChange(filterType: 'all' | 'dog' | 'cat') {
     this.currentFilter = filterType;
-    this.filteredPets$ = this.originalPets$.pipe(map (pets => {
+    this.filteredPets$ = this.originalPets$.pipe(
+      map(pets => {
         if (!pets) return [];
         return filterType === 'all' ? pets : pets.filter(pet => pet?.type?.toLowerCase() === filterType);
       })
     );
+
+    this.filteredPets$
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        this.currentPage.set(1); 
+        this.updatePaginatedPets();
+      });
   }
-  
+
+
+  // Pagination Logic
+  updatePaginatedPets() {
+    this.paginatedPets$ = this.filteredPets$.pipe(
+      map(pets => {
+        const start = (this.currentPage() - 1) * this.pageSize;
+        const end = start + this.pageSize;
+        return pets.slice(start, end);
+      })
+    );
+
+    this.totalPages$ = this.filteredPets$.pipe(
+      map(pets => Math.ceil(pets.length / this.pageSize))
+    );
+  }
+
+  onPageChange(page: number) {
+    this.currentPage.set(page);
+    this.updatePaginatedPets();
+  }
+
 }
