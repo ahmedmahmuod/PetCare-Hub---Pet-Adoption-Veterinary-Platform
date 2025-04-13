@@ -5,7 +5,7 @@
       <!-- Image Gallery -->
       <div class="image-gallery">
         <img [src]="selectedImage" [alt]="'Selected pet service image'" class="main-image" />
-        <div *ngIf="serviceData?.imagesProfile?.length" class="thumbnail-container">
+        <div *ngIf="serviceData?.imagesProfile" class="thumbnail-container">
           <img *ngFor="let image of serviceData.imagesProfile; let i = index"  [src]="image" [alt]="'Thumbnail ' + (i + 1)" class="thumbnail" [class.active]="selectedImage === image" (click)="selectImage(image)" />
         </div>
       </div>

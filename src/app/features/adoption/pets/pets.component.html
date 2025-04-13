@@ -12,7 +12,7 @@
           </h1>
         } @else {
           <app-card-adoption [items]="(paginatedPets$ | async) ?? []"></app-card-adoption>
-          <app-pagination [totalItems]="(filteredPets$ | async)?.length || 0" [itemsPerPage]="pageSize" [currentPage]="currentPage" (pageChange)="onPageChange($event)"/>
+          <app-pagination [totalItems]="totalPages" [itemsPerPage]="pageSize" [currentPage]="currentPage" (pageChange)="onPageChange($event)"/>
         }
       }
     </div>

@@ -6,109 +6,48 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="skeleton-container">
-      <div *ngFor="let item of skeletonItems" class="skeleton-card">
-        <div class="skeleton-content">
-          <div class="skeleton-image pulse"></div>
-          <div class="skeleton-title pulse"></div>
-          <div class="skeleton-text pulse"></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 container mx-auto">
+      <div *ngFor="let item of skeletonItems" class="sm:m-0 mx-5 flex flex-col bg-third-color rounded-3xl border-2 border-fourth-color overflow-hidden">
+        <div class="relative w-full h-64">
+          <div class="w-full h-full pulse bg-gray-200"></div>
+          <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-1 shadow-lg">
+            <div class="w-20 h-4 pulse bg-gray-200 rounded-full"></div>
+          </div>
+        </div>
+        
+        <div class="p-4">
+          <div class="flex justify-between items-center mb-2">
+            <div class="w-24 h-6 pulse bg-gray-200 rounded"></div>
+            <div class="flex items-center">
+              <div class="w-16 h-6 pulse bg-gray-200 rounded"></div>
+            </div>
+          </div>
+          
+          <div class="flex items-center">
+            <div class="w-4 h-4 pulse bg-gray-200 rounded-full"></div>
+            <div class="ml-1 w-20 h-4 pulse bg-gray-200 rounded"></div>
+          </div>
         </div>
       </div>
     </div>
   `,
-  styles: [
-    `
-      .skeleton-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px;
-      }
+  styles: [`
+    .pulse {
+      animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
 
-      .skeleton-card {
-        padding: 16px;
-        display: flex;
-        flex-direction: column;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        width: 300px;
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
       }
-
-      .skeleton-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
+      50% {
+        opacity: .5;
       }
-
-      .skeleton-image {
-        width: 100%;
-        height: 150px;
-        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-        background-size: 200% 100%;
-        border-radius: 8px;
-        margin-bottom: 16px;
-      }
-
-      .skeleton-title {
-        width: 60%;
-        height: 24px;
-        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-        background-size: 200% 100%;
-        border-radius: 4px;
-      }
-
-      .skeleton-text {
-        width: 80%;
-        height: 16px;
-        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-        background-size: 200% 100%;
-        border-radius: 4px;
-      }
-
-      .pulse {
-        animation: pulse 1.5s infinite, shimmer 2s infinite;
-      }
-
-      @keyframes pulse {
-        0% {
-          opacity: 0.6;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0.6;
-        }
-      }
-
-      @keyframes shimmer {
-        0% {
-          background-position: 200% 0;
-        }
-        100% {
-          background-position: -200% 0;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .skeleton-container {
-          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        }
-      }
-
-      @media (max-width: 480px) {
-        .skeleton-container {
-          grid-template-columns: 1fr;
-        }
-      }
-    `,
-  ],
+    }
+  `]
 })
 export class SkeletonCardComponent {
-  @Input() count: number = 12;
+  @Input() count: number = 8;
   skeletonItems: number[] = [];
 
   ngOnInit() {

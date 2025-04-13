@@ -15,8 +15,6 @@ import { provideTranslateService, TranslateLoader, TranslateStore } from '@ngx-t
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
-import { servicesReducer } from './stores/services-store/services.reducer';
-import { ServicesEffects } from './stores/services-store/services.effects';
 import { blogsReducer } from './stores/blogs-store/blogs.reducer';
 import { BlogsEffects } from './stores/blogs-store/blogs.effects';
 import { petsReducer } from './stores/pets-store/pets.reducer';
@@ -30,12 +28,10 @@ export function HttpLoaderFactory(http: HttpClient) {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideStore({ 
-      services: servicesReducer,
       blogs: blogsReducer,
       pets: petsReducer
     }),
     provideEffects([
-      ServicesEffects,
       BlogsEffects,
       PetsEffects
     ]),

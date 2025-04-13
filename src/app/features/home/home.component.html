@@ -2,23 +2,14 @@
     <!-- Hero Section -->
     <div class="hero-section relative">
       <app-hero-section imageUrl="backgrounds/home-hero/hero-background.png" [title]="('Pages.Home.Hero.Title' | translate)" [description]="('Pages.Home.Hero.Subtitle' | translate)"/>
-
-      <!-- Services Cards Section -->
-      <section class="services-section">
-          <app-global-card *ngFor="let service of services" [imageUrl]="service.image" [title]="service.title | translate" class="service-card"/>
-          <app-global-card routerLink="/services" imageUrl="logos/pets.png" [title]="('Pages.Home.Services.Card_Five' | translate)" [linkStyled1]="true" class="service-card"/>
-      </section>
     </div>
       
 
     <!-- Features Section -->
-    <section class="features-section py-16 md:py-24 bg-third-color">
+    <section class="features-section py-16 md:py-24 bg-brand-color">
       <div class="px-4">
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <app-page-title [title]="('Pages.Home.Static_Section.Title' | translate)"/>
-          <p class="text-fourth-color text-lg md:text-xl leading-relaxed">
-            {{'Pages.Home.Static_Section.Subtitle' | translate}}
-          </p>
+          <app-page-title [title]="('Pages.Home.Static_Section.Title' | translate)" [description]="('Pages.Home.Static_Section.Subtitle' | translate)" [titleDark]="true" [desDark]="true"/>
         </div>    
 
         <div class="features-container max-w-7xl mx-auto">
@@ -56,7 +47,7 @@
     </section>
 
     <!-- Blogs Section -->
-    <section class="mt-20">
+    <section class="mt-10">
       <div class="container mx-auto px-4">
         <app-page-title [title]="('Pages.Blogs.Title' | translate)" [description]="('Pages.Blogs.Description' | translate)"class="mb-12"/>
         <app-slider [items]="[2, 3, 4, 5, 6]">

@@ -6,10 +6,10 @@ import { ServicesService } from '../../../core/services/services/services.servic
 import { egyptGovernoratesArrayen } from '../../../core/data/eg-governorates.model';
 import { egyptGovernoratesArrayAr } from '../../../core/data/eg-governorates.model';
 import { LanguageService } from '../../../core/services/language/language.service';
-import { ServiceModel } from '../../../core/models/service/service.model';
+import { ServiceProfileModel } from '../../../core/models/service/service.model';
 import { SkeletonServiceComponent } from "../../../shared/components/skeletons/service-page/skeleton-service-page.component";
 import { ReviewsComponent } from "../../../shared/components/reviews/reviews.component";
-
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-single-service',
   standalone: true,
@@ -21,17 +21,18 @@ export class SingleServiceComponent implements OnInit {
   // Privets
   private serviceServices = inject(ServicesService);
   private langServices = inject(LanguageService);
+  private route = inject (ActivatedRoute)
 
   // another variables
   serviceId!: string;
-  serviceData!: ServiceModel;
+  serviceData!: ServiceProfileModel;
   faqsArray: { question: string; answer: string }[] = [];
   isLogged = true;
   activeTab = 'description';
   egyptGovernoratesArray = egyptGovernoratesArrayen;
   activeIndex: number = -1;
   selectedImage!: any;
-  bookingForm: FormGroup;
+  bookingForm!: FormGroup;
   hoverRating = 0;
   loading = signal<boolean>(false);
 
@@ -42,16 +43,20 @@ export class SingleServiceComponent implements OnInit {
       this.egyptGovernoratesArray =
         lang === 'en' ? egyptGovernoratesArrayen : egyptGovernoratesArrayAr;
     });
-
-    // get service id from state of router
-    this.serviceId = history.state.serviceId;
-
     this.loading.set(true)
+    
+    // get service id from state of router
+    this.serviceId = history.state.serviceId;    
+
+    this.route.paramMap.subscribe(params => {
+      this.serviceId = params.get('serviceId') || '';
+    });
+
     // call services service to get service data
     this.serviceServices.getSingleService(this.serviceId).subscribe((data) => {
       this.serviceData = data;
       this.selectedImage = this.serviceData.imagesProfile[0];
-      
+
       this.faqsArray = Object.entries(this.serviceData)
       .filter(([key]) => key.startsWith('question'))
       .map(([key, value]) => ({
@@ -62,7 +67,6 @@ export class SingleServiceComponent implements OnInit {
     });
 
   }
-
 
   constructor(private fb: FormBuilder) {
     // Initialize Booking Form with validation

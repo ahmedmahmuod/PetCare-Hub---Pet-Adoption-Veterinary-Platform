@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter, computed, signal } from '@angular/core';
+import { Component, Input, Output, EventEmitter, computed, signal, Signal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [ CommonModule , TranslateModule],
   template: `
-    <div class="flex justify-center items-center mt-6 gap-2 flex-wrap">
+    <div class="flex justify-center items-center mt-10 gap-2 flex-wrap">
       <button (click)="changePage(currentPage() - 1)" [disabled]="currentPage() === 1" class="w-24 py-2 border rounded border-brand-color text-brand-color hover:bg-brand-color hover:text-seconed-color disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:text-brand-color">
         {{ 'Global.Pagination.Prev' | translate }}
       </button>
@@ -25,12 +25,13 @@ import { TranslateModule } from '@ngx-translate/core';
   `
 })
 export class PaginationComponent {
-  @Input() totalItems: number = 0;
+  @Input() totalItems!: Signal<number>;
   @Input() itemsPerPage: number = 10;
   @Input({ required: true }) currentPage = signal(1);
+  
   @Output() pageChange = new EventEmitter<number>();
 
-  totalPages = computed(() => Math.ceil(this.totalItems / this.itemsPerPage));
+  totalPages = computed(() => Math.ceil(this.totalItems() / this.itemsPerPage));
 
   pages = computed(() => {
     const pages: number[] = [];

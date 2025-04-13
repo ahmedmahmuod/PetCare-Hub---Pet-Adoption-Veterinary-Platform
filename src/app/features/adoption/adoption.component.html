@@ -15,24 +15,13 @@
 <!-- Pets For Adoption -->
 <section *ngIf="!isOutletActive" class="container mx-auto">
     <app-page-title [title]="('Pages.Adoption.Pets_For_Adoption.Title' | translate)"/>
-    <app-adoption-section [isStore]="true" type="getallpets" 
-        [moreText]="('Pages.Adoption.Pets_For_Adoption.More.Title' | translate)" 
-        [moreSubtext]="('Pages.Adoption.Pets_For_Adoption.More.Subtitle' | translate)"/>
+    <app-adoption-section [isStore]="true" type="getallpets" [moreText]="('Pages.Adoption.Pets_For_Adoption.More.Title' | translate)" [moreSubtext]="('Pages.Adoption.Pets_For_Adoption.More.Subtitle' | translate)"/>
 </section>
 
 <!-- Planning to Adopt -->
 <section class="container mx-auto mt-20">
     <app-page-title [title]="('Pages.Adoption.Planning_to_Adopt.Title' | translate)"/>
-    <div class="card-container">
-        <div *ngFor="let item of planning" class="card">
-            <div class="icon">
-                <img [src]="item.image" [alt]="item.title"/>
-                <h3>{{ item.title | translate}}</h3>
-                <p>{{ item.subTitle | translate }}</p>
-            </div>
-            <app-global-button [text]="'Pages.Adoption.Planning_to_Adopt.Btn'"/>
-        </div>
-    </div>
+    <app-card-list [cards]="planning" [defaultButtonText]="'Learn more'"/>
 </section>
 
 <!-- Successful Adoption -->

@@ -1,6 +1,20 @@
-<div class="container mx-auto mt-6">
-    <app-page-title class="m-52" [title]="('Pages.Services.Title' | translate)" [description]="('Pages.Services.Subtitle' | translate) "/>
-    <div class="flex justify-center flex-wrap gap-5 p-5">
-        <app-services-card class="flex flex-wrap gap-5 justify-center"/>
-    </div>
-</div>
+<section class="mb-36">
+    <app-hero-section [initialService]="formServiceType" [initialLocation]="formCity" imageUrl="backgrounds/services-hero/services-hero.png" [title]="'Find what you are looking for near you'" [showFilter]="true" (search)="onSearch($event)"/>
+</section>
+
+<section class="container mx-auto mt-14">
+    <ng-container *ngIf="isLoading$ | async; else content">
+        <app-skeleton-services-card></app-skeleton-services-card>
+    </ng-container>
+    
+    <ng-template #content>
+        <app-services-card [services]="getPaginatedServices()" [isLoading]="isLoading$"/>
+        <div *ngIf="(filteredServices$ | async)?.length === 0 && !(isLoading$ | async)" class="text-center py-10 text-3xl text-fourth-color">
+            There are no services matching the selected filters.
+          </div>
+        
+        <ng-container *ngIf="(totalItems() / pageSize) > 1">
+            <app-pagination [totalItems]="totalItems" [itemsPerPage]="pageSize" [currentPage]="currentPage" (pageChange)="onPageChange($event)"/>
+        </ng-container>
+    </ng-template>
+</section>

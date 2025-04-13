@@ -13,6 +13,7 @@ import { AdoptionCardComponent } from "./adoption-section/adoption-card.compontn
 import { Pet } from '../../core/models/pets/pet.model';
 import { PetsService } from '../../core/services/pets/pets.services';
 import { Observable, of } from 'rxjs';
+import { CardListComponent } from "../../shared/components/static-sections/more-details-section.component";
 
 @Component({
   selector: 'app-adoption',
@@ -30,6 +31,7 @@ import { Observable, of } from 'rxjs';
     AllBlogsComponent,
     CustomButtonComponent,
     AdoptionCardComponent,
+    CardListComponent
 ],
   templateUrl: './adoption.component.html',
   styleUrls: ['./adoption.component.css'],

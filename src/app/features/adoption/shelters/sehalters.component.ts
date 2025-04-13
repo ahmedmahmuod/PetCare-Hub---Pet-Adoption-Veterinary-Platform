@@ -35,18 +35,9 @@ import { TranslateModule } from '@ngx-translate/core';
     </div>
 
     <div class="shelters-grid" *ngIf="shelters$ | async as shelters">
-      <article
-        (click)="onShelterClick(shelter)"
-        *ngFor="let shelter of shelters; trackBy: trackById"
-        class="shelter-card"
-      >
+      <article (click)="onShelterClick(shelter)" *ngFor="let shelter of shelters; trackBy: trackById" class="shelter-card">
         <div class="card-image">
-          <img 
-            [src]="optimizeImage(shelter.shelterImage)" 
-            [alt]="shelter.shelterName" 
-            width="400"
-            height="300"
-          />
+          <img [src]="optimizeImage(shelter.shelterImage)" [alt]="shelter.shelterName" width="400" height="300" loading="lazy"/>
           <div class="card-content">
             <h2>{{ shelter.shelterName }}</h2>
             <div class="rating-container">

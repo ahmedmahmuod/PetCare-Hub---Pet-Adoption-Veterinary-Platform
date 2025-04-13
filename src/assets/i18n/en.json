@@ -4,7 +4,7 @@
       "Home": "Home",
       "Services": "Services",
       "Adoption": "Adoption",
-      "Vets": "Vets",
+      "Vets": "Veterinary",
       "Shop": "Shop",
       "Blogs": "Blogs",
       "Community": {
@@ -217,7 +217,7 @@
           "About": "About Us",
           "Gallery_Shelter": "Gallery Shelter",
           "Our_Pets": "Our Pets",
-          "Description_Reviews": "Description & Reviews",
+          "Description_Reviews": "Reviews",
           "Reviews": "Reviews"
         }
       }
@@ -230,7 +230,7 @@
       "Title": "Quick Links",
       "Home": "Home",
       "Services": "Services",
-      "Vets": "Vets",
+      "Vets": "Veterinary",
       "Doctors": "Doctors",
       "Shop": "Shop"
     },

@@ -1,5 +1,5 @@
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
+import { Component, DestroyRef, inject, OnInit, Signal, signal } from '@angular/core';
 import { PageTitleComponent } from "../../../shared/components/page-title/pageTitle.component";
 import { TranslateModule } from '@ngx-translate/core';
 import { AdoptionCardComponent } from "../adoption-section/adoption-card.compontnet";
@@ -38,10 +38,11 @@ export class PetsComponent implements OnInit {
   title!: string;
   originalPets$: Observable<Pet[]> = of([]);
   filteredPets$: Observable<Pet[]> = of([]);
-  totalPages$: Observable<number> = of(0);
   loading = signal<boolean>(false);
   currentFilter: 'all' | 'dog' | 'cat' = 'all';
   
+  totalPages = signal(0);
+  // totalPages$: Observable<number> = of(0);
   currentPage = signal(1);
   paginatedPets$: Observable<Pet[]> = of([]);
   pageSize = 15;
@@ -113,9 +114,13 @@ export class PetsComponent implements OnInit {
       })
     );
 
-    this.totalPages$ = this.filteredPets$.pipe(
-      map(pets => Math.ceil(pets.length / this.pageSize))
-    );
+    // this.totalPages$ = this.filteredPets$.pipe(
+    //   map(pets => Math.ceil(pets.length / this.pageSize))
+    // );
+
+    this.filteredPets$.subscribe((pets) => {
+      this.totalPages.set(pets.length)
+    })
   }
 
   onPageChange(page: number) {
