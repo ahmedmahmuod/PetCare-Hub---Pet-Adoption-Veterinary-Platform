@@ -32,7 +32,7 @@ import { TranslateModule } from '@ngx-translate/core';
         <div class="container mx-auto px-4 space-y-8">
           <!-- Header Section -->
           <div class="shadow-[0_2px_8px_rgba(0,0,0,0.05)] overflow-hidden mb-8">
-            <div class="bg-brand-seconed-color h-32"></div>
+            <div class="bg-third-color h-32"></div>
             <div class="px-6 pb-6">
               <div class="flex flex-col md:flex-row gap-6 -mt-16">
                 <img [src]="doctor.doctorImage" [alt]="doctor.name" class="w-32 h-32 rounded-xl object-cover border-4 border-third-color shadow-sm">
@@ -53,7 +53,7 @@ import { TranslateModule } from '@ngx-translate/core';
                   </div>
                 </div>
                 <div class="flex items-start max-md:justify-center">
-                  <a [href]="'tel:' + doctor.phone" class="bg-brand-color text-brand-seconed-color px-6 py-3 rounded-xl hover:opacity-90  transition-colors flex items-center gap-2 shadow-lg">
+                  <a [href]="'tel:' + doctor.phone" class="bg-brand-color text-seconed-color px-6 py-3 rounded-xl hover:opacity-90  transition-colors flex items-center gap-2 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>

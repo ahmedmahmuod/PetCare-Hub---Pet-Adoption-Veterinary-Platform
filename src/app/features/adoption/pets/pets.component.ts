@@ -42,7 +42,6 @@ export class PetsComponent implements OnInit {
   currentFilter: 'all' | 'dog' | 'cat' = 'all';
   
   totalPages = signal(0);
-  // totalPages$: Observable<number> = of(0);
   currentPage = signal(1);
   paginatedPets$: Observable<Pet[]> = of([]);
   pageSize = 15;
@@ -113,11 +112,7 @@ export class PetsComponent implements OnInit {
         return pets.slice(start, end);
       })
     );
-
-    // this.totalPages$ = this.filteredPets$.pipe(
-    //   map(pets => Math.ceil(pets.length / this.pageSize))
-    // );
-
+    
     this.filteredPets$.subscribe((pets) => {
       this.totalPages.set(pets.length)
     })
