@@ -7,13 +7,13 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { PageTitleComponent } from "../../shared/components/page-title/pageTitle.component";
 import { AdoptionSectionComponent } from "./adoption-section/adoption-section.component";
 import { SliderComponent } from "../../shared/components/slider/slicder.component";
-import { AllBlogsComponent } from "../blogs/all-blogs/all-blogs.component";
 import { CustomButtonComponent } from "../../shared/components/buttons/global-btn.component";
 import { AdoptionCardComponent } from "./adoption-section/adoption-card.compontnet";
 import { Pet } from '../../core/models/pets/pet.model';
 import { PetsService } from '../../core/services/pets/pets.services';
 import { Observable, of } from 'rxjs';
 import { CardListComponent } from "../../shared/components/static-sections/more-details-section.component";
+import { BlogCardsComponent } from "../blogs/blog-card/blog-card.component";
 
 @Component({
   selector: 'app-adoption',
@@ -28,10 +28,10 @@ import { CardListComponent } from "../../shared/components/static-sections/more-
     PageTitleComponent,
     AdoptionSectionComponent,
     SliderComponent,
-    AllBlogsComponent,
     CustomButtonComponent,
     AdoptionCardComponent,
-    CardListComponent
+    CardListComponent,
+    BlogCardsComponent
 ],
   templateUrl: './adoption.component.html',
   styleUrls: ['./adoption.component.css'],

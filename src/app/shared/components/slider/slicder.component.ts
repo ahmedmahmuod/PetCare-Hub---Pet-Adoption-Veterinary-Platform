@@ -28,17 +28,16 @@ import { CommonModule } from '@angular/common';
           </button>
         </div>
       </div>
-
       <ng-content select="[slider-footer]"></ng-content>
     </div>
   `,
   styles: [`
     .slider-container {
       margin: 0 auto;
-      padding: 2rem;
       border-radius: 8px;
       text-align: center;
       position: relative;
+      margin-top: 40px;
     }
 
     .slider {

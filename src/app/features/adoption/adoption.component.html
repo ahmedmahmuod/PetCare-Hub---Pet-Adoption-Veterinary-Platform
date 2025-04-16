@@ -42,7 +42,7 @@
     <app-page-title [title]="('Pages.Blogs.Title' | translate)" [description]="('Pages.Blogs.Description' | translate)"class="mb-12"/>
     <app-slider [items]="[1,1,1,1,1,1]">
         <ng-template #itemTemplate let-pet>
-            <app-all-blogs class="flex"/>
+            <app-blog-cards [isInSlider]="true"/>
         </ng-template>
 
         <app-global-button slider-footer [routerLink]="'/blogs'" [text]="'Global.View_Btn'" buttonStyle="dark-bg"/>

@@ -7,13 +7,13 @@ import { Store } from '@ngrx/store';
 import { PageTitleComponent } from "../../shared/components/page-title/pageTitle.component";
 import { HeroSectionComponent } from "../../shared/components/hero-section/hero-section.component";
 import { SliderComponent } from "../../shared/components/slider/slicder.component";
-import { AllBlogsComponent } from "../blogs/all-blogs/all-blogs.component";
 import { CustomButtonComponent } from "../../shared/components/buttons/global-btn.component";
+import { BlogCardsComponent } from "../blogs/blog-card/blog-card.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, TranslateModule, RouterLink, PageTitleComponent, HeroSectionComponent, SliderComponent, AllBlogsComponent, CustomButtonComponent],
+  imports: [CommonModule, TranslateModule, RouterLink, PageTitleComponent, HeroSectionComponent, SliderComponent, CustomButtonComponent, BlogCardsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
