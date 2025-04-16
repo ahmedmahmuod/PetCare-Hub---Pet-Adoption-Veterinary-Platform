@@ -3,11 +3,12 @@ import { Component, inject, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ServiceModel } from '../../../core/models/service/service.model';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-services-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ CommonModule, TranslateModule ],
   template: `
     <ng-container *ngIf="services | async as services">
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 container w-full mx-auto">
@@ -31,12 +32,16 @@ import { Router } from '@angular/router';
               <h3 class="text-lg font-bold text-brand-color group-hover:text-brand-seconed-color transition-all">
                 {{service.serviceType}}
               </h3>
-              <div class="flex items-center">
+              <div class="flex items-baseline">
                 <span class="font-bold text-brand-color group-hover:text-brand-seconed-color">
-                  {{'$'+ service.price}}
+                  {{'$'+ service.price }}
                 </span>
+                <span class="text-fourth-color group-hover:text-seconed-color mx-1">-</span>
                 <span class="text-sm text-fourth-color group-hover:text-seconed-color ml-1">
-                  /{{service.pricePer}}
+                  {{ service.pricePer === 'night' ? ('Pages.Services.ServiceCard.Type.Night' | translate) : 
+                    service.pricePer === 'course' ? ('Pages.Services.ServiceCard.Type.Course' | translate) : 
+                    service.pricePer === 'walk' ? ('Pages.Services.ServiceCard.Type.Walk' | translate) :
+                    service.pricePer === 'ride' ?  ('Pages.Services.ServiceCard.Type.Ride' | translate) : '' }}
                 </span>
               </div>
             </div>

@@ -50,8 +50,46 @@
     },
     
     "Services": {
-      "Title": "Do you need help with your pets?",
-      "Subtitle": "Book what you're looking for",
+      "Title": "Find what you are looking for near you",
+      "Subtitle": "Scroll down to browse Pet Services near you",
+
+      "Filter": {
+        "Form": {
+          "Type": {
+            "Label": "What service do you want?",
+            "Options": {
+              "Selected": "All Services",
+              "Option_One": "Pet Walking",
+              "Option_Two": "Pet Sitting",
+              "Option_Three": "Pet Boarding",
+              "Option_Four": "Pet Grooming",
+              "Option_Five": "Pet Training",
+              "Option_Six": "Pet Care",
+              "Option_Seven": "Pet Hotel",
+              "Option_Eight": "Pet Taxi",
+              "Option_Nine": "Pet Friendly"
+            }
+          },
+          "Location": {
+            "Label": "Where do you need it?",
+            "Options": {
+              "Selected": "All Governorates"
+            }
+          }
+        },
+        "Btn": "Search",
+        "Filter_Empty": "There are no services matching the selected filters."
+      },
+
+      "ServiceCard": {
+        "Type": {
+          "Night": "Night",
+          "Walk": "Walk",
+          "Course": "Course",
+          "Ride": "Ride"
+        }
+      },
+
       "Single_Service": {
         "Booking_Section": {
           "Form": {
@@ -221,8 +259,71 @@
           "Reviews": "Reviews"
         }
       }
-    }
+    },
 
+    "Vets": {
+      "Title": "We care about your Pets",
+      "Cards": {
+        "Card_One": "Doctors",
+        "Card_Two": "Clinics"
+      },
+
+      "Static_Section": {
+        "Title": "Providing our best veterinary Services",
+        "Cards": {
+          "Card_One": {
+            "Title": "Pet Vaccination",
+            "Subtitle": "Keep your pet healthy and happy get them vaccinated!"
+          },
+          "Card_Two": {
+            "Title": "Pet Veterinary",
+            "Subtitle": "Keep your pet healthy and happy with monthly checkup"
+          },
+          "Card_Three": {
+            "Title": "Pet Surgery",
+            "Subtitle": "Keep your pet healthy and happy"
+          },
+          "Btn": "Learn More"
+        },
+
+        "Our_Best_Doc": {
+          "Title": "Meet Our Best Doctors",
+          "Subtitle": "We change your life & world with our valuable expert Doctors team",
+          "Btn": "See all doctors"
+        },
+        
+        "Our_Best_Clinics": {
+          "Title": "Meet Our Best Clinics",
+          "Subtitle": "We change your life & world with valuable expert Clinics",
+          "Btn": "See all clinics"
+        }
+      },
+
+      "Doctor_Page": {
+        "Title": "Meet Our Best Doctors",
+        "Subtitle": "We change your life & world with our valuable expert Doctors team",
+        "Btn": "View Doctor",
+        "Profile": {
+          "Header": {
+            "Call_Btn": "Call Now",
+            "Reviews": "Reviews",
+            "Type": {
+              "Dog": "Dog",
+              "Cat": "Cat"
+            }
+          },
+          "About": "About Doctor",
+          "Specializations": "Specializations",
+          "Gallery": {
+            "Title": "Gallery",
+            "Empty": "No images available"
+          },
+          "Contact_Information": "Contact Information",
+          "Reviews": "Reviews"
+        }
+      }
+
+    }
   },
 
   "Footer": {

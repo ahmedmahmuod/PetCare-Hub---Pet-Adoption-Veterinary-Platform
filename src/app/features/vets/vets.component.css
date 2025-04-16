@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 
 .hero-section .cards {
@@ -20,7 +20,7 @@
   
   @media (max-width: 536px) {
     .hero-section .cards {
-      bottom: -33%;
+      bottom: -240px;
     }
   
     .hero-section {

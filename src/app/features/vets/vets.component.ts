@@ -3,14 +3,11 @@ import { HeroSectionComponent } from "../../shared/components/hero-section/hero-
 import { GlobalCardComponent } from "../../shared/components/global-card/global-card.component";
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { PageTitleComponent } from "../../shared/components/page-title/pageTitle.component";
 import { TranslateModule } from '@ngx-translate/core';
-import { CardListComponent } from "../../shared/components/static-sections/more-details-section.component";
-
 @Component({
   selector: 'app-vets',
   standalone: true,
-  imports: [CommonModule, HeroSectionComponent, GlobalCardComponent, RouterLink, RouterOutlet, PageTitleComponent, TranslateModule, CardListComponent],
+  imports: [CommonModule, HeroSectionComponent, GlobalCardComponent, RouterOutlet, TranslateModule],
   templateUrl: './vets.component.html',
   styleUrl: './vets.component.css'
 })
@@ -18,7 +15,6 @@ export class VetsComponent {
   private router = inject(Router);
 
   isOutletActive = false;
-
 
   onOutletActivated() {
     this.isOutletActive = true;
@@ -32,39 +28,34 @@ export class VetsComponent {
     return this.router.url === route;
   }
 
+  navigateWithoutScroll(route: string) {
+    const currentScrollY = window.scrollY;
+    this.router.navigate([route]).then(() => {
+      setTimeout(() => {
+        window.scrollTo({ top: currentScrollY });
+      }, 0);
+    });
+  }
+
     // Vets cards data
     vets_cards_data = [
       {
-        title: 'Doctors',
+        title: 'Pages.Vets.Cards.Card_One',
         image: 'veterinary/cards/doctors.png',
         type: 'doctors',
         rout: '/veterinary/doctors',
       },
       {
-        title: 'Clinics',
+        title: 'Pages.Vets.Cards.Card_Two',
         image: 'veterinary/cards/clinics.png',
         type: 'clinics',
         rout: '/veterinary/clinics',
       },
     ];
 
-    // Providing our best veterinary Services
-    providing_data = [
-      {
-        title: 'Pet Vaccination',
-        subTitle: 'Keep your pet healthy and happy get them vaccinated!',
-        image: 'veterinary/static-details-section/static-details1.png',
-      },
-      {
-        title: 'Pet Veterinary',
-        subTitle: 'Keep your pet healthy and happy with monthly checkup',
-        image: 'veterinary/static-details-section/static-details2.png',
-      },
-      {
-        title: 'Pet Surgery',
-        subTitle: 'Keep your pet healthy and happy ',
-        image: 'veterinary/static-details-section/static-details3.png',
-      }
-    ]
+
+    clickToRoute (route: string) {
+      this.router.navigate([route]);
+    }
 
 }

@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [CommonModule, TranslateModule],
   template: `
     <div class="service-card" [ngClass]="{ 'card-link-one': linkStyled1, 'card-link-two': linkStyled2 ,'active-card': isActive }">
-      <img [src]="imageUrl" [alt]="title" />
+      <img [src]="imageUrl" [alt]="title" loading="lazy"/>
       <h1 [ngClass]="{'active-h1': isActive}">{{ title | translate }}</h1>
     </div>
   `,

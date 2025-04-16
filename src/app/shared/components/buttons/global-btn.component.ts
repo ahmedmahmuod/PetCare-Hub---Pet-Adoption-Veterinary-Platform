@@ -47,7 +47,7 @@ import { TranslateModule } from '@ngx-translate/core';
   ]
 })
 export class CustomButtonComponent {
-  @Input() text: string = 'Button';
+  @Input() text!: string;
   @Input() routerLink!: string;
   @Input() buttonStyle: 'light-bg' | 'dark-bg' = 'dark-bg'; // Default to dark-bg
 }

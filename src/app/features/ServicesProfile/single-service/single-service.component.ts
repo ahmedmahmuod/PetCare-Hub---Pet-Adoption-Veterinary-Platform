@@ -27,7 +27,6 @@ export class SingleServiceComponent implements OnInit {
   serviceId!: string;
   serviceData!: ServiceProfileModel;
   faqsArray: { question: string; answer: string }[] = [];
-  isLogged = true;
   activeTab = 'description';
   egyptGovernoratesArray = egyptGovernoratesArrayen;
   activeIndex: number = -1;

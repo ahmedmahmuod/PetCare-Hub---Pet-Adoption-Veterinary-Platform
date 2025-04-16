@@ -1,29 +1,30 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-page-title',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   template: `
     <div class="page-title-container">
       <div class="title-wrapper">
         <div class="title-content">
-          <span class="subtitle" *ngIf="subtitle">{{ subtitle }}</span>
+          <span class="subtitle" *ngIf="subtitle">{{ subtitle | translate }}</span>
           <h1>
-            <span [ngClass]="{'title-dark': titleDark}" class="title-text">{{ title }}</span>
+            <span [ngClass]="{'title-dark': titleDark}" class="title-text">{{ title | translate }}</span>
           </h1>
+          <div *ngIf="description" class="description-wrapper">
+            <p class="description">
+              <span [ngClass]="{'des-dark': titleDark}" class="description-text">{{ description | translate }}</span>
+            </p>
+          </div>
           <div class="title-decoration">
             <span [ngClass]="{'decoration': !titleDark}" class="dot"></span>
             <span [ngClass]="{'decoration': !titleDark}" class="line"></span>
             <span [ngClass]="{'decoration': !titleDark}" class="dot"></span>
           </div>
         </div>
-      </div>
-      <div *ngIf="description" class="description-wrapper">
-        <p class="description">
-          <span [ngClass]="{'des-dark': titleDark}" class="description-text">{{ description }}</span>
-        </p>
       </div>
     </div>
   `,
@@ -107,7 +108,6 @@ import { Component, Input } from '@angular/core';
     }
 
     .description-wrapper {
-      margin-top: clamp(1rem, 3vw, 2rem);
       opacity: 0;
       animation: fadeUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s;
     }

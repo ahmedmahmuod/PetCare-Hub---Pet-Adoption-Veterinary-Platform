@@ -9,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [ CommonModule, FormsModule, TranslateModule ],
   template: `
     <div class="filter-container">
-      <div class="flex items-baseline  gap-2">
+      <div class="flex items-baseline gap-2">
         <i class="fa-solid fa-filter"></i>
         <h3 class="filter-title">{{'Pages.Adoption.Filter.Title' | translate}}</h3>
       </div>
@@ -35,11 +35,6 @@ import { TranslateModule } from '@ngx-translate/core';
   `,
   styles: [`
     .fa-solid {
-      font-size: 1.2rem;
-      color: var(--brand-color);
-    }
-
-    .fa-solid: {
       font-size: 1.2rem;
       color: var(--brand-color);
     }

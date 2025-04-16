@@ -1,5 +1,5 @@
 <section class="mb-36">
-    <app-hero-section [initialService]="formServiceType" [initialLocation]="formCity" imageUrl="backgrounds/services-hero/services-hero.png" [title]="'Find what you are looking for near you'" [showFilter]="true" (search)="onSearch($event)"/>
+    <app-hero-section [description]="'Pages.Services.Subtitle'" [initialService]="formServiceType" [initialLocation]="formCity" imageUrl="backgrounds/services-hero/services-hero.png" [title]="'Pages.Services.Title'" [showFilter]="true" (search)="onSearch($event)"/>
 </section>
 
 <section class="container mx-auto mt-14">
@@ -10,7 +10,7 @@
     <ng-template #content>
         <app-services-card [services]="getPaginatedServices()" [isLoading]="isLoading$"/>
         <div *ngIf="(filteredServices$ | async)?.length === 0 && !(isLoading$ | async)" class="text-center py-10 text-3xl text-fourth-color">
-            There are no services matching the selected filters.
+            {{'Pages.Services.Filter.Filter_Empty' | translate}}
           </div>
         
         <ng-container *ngIf="(totalItems() / pageSize) > 1">

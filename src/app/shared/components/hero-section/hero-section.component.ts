@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnInit, inject } from "@angular/core";
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { egyptGovernoratesArrayen } from '../../../core/data/eg-governorates.model';
@@ -22,25 +22,26 @@ interface SearchData {
             <div class="hero-content">
                 <div class="text-content">
                     <h1 class="hero-title">
-                        {{ title }}
+                        {{ title | translate }}
                     </h1>
                     <p *ngIf="description" class="hero-description">
-                        {{ description }}            
+                        {{ description | translate }}            
                     </p>
                 </div>
                 
-                <!-- Search Filter - في الأسفل -->
+                <!-- Search Filter -->
                 <div *ngIf="showFilter" class="search-filter">
                     <div class="filter-container">
                         <div class="filter-grid">
                             <div class="filter-item">
                                 <label for="service" class="filter-label">
-                                    What service do you want?
-                                </label>
+                                {{'Pages.Services.Filter.Form.Type.Label' | translate}}
+                                </label>               
                                 <div class="select-wrapper">
-                                    <select id="service" [(ngModel)]="selectedService" 
-                                            class="filter-select" (change)="onServiceChange()">
-                                        <option value="" selected>All Services</option>
+                                    <select id="service" [(ngModel)]="selectedService" class="filter-select" (change)="onServiceChange()">
+                                        <option value="" selected>
+                                            {{'Pages.Services.Filter.Form.Type.Options.Selected' | translate}}
+                                        </option>
                                         <option *ngFor="let service of allServicesType" [value]="service">
                                             {{service}}
                                         </option>
@@ -50,12 +51,13 @@ interface SearchData {
                             
                             <div class="filter-item">
                                 <label for="location" class="filter-label">
-                                    Where do you need it?
+                                    {{'Pages.Services.Filter.Form.Location.Label' | translate}}
                                 </label>
                                 <div class="select-wrapper">
-                                    <select id="location" [(ngModel)]="selectedLocation" 
-                                            class="filter-select">
-                                        <option value="" selected>All Locations</option>
+                                    <select id="location" [(ngModel)]="selectedLocation" class="filter-select">
+                                        <option value="" selected>
+                                            {{'Pages.Services.Filter.Form.Location.Options.Selected' | translate}}
+                                        </option>
                                         <option *ngFor="let location of allLocations" [value]="location">
                                             {{location}}
                                         </option>
@@ -65,9 +67,7 @@ interface SearchData {
                             
                             <div class="filter-button">
                                 <button (click)="onSearchClick()" class="search-button">
-                                    <span class="button-content">
-                                        Search
-                                    </span>
+                                    <span class="button-content">{{'Pages.Services.Filter.Btn' | translate}}</span>
                                 </button>
                             </div>
                         </div>
@@ -128,7 +128,7 @@ interface SearchData {
 
         .hero-title {
             font-size: 2.25rem;
-            line-height: 2.5rem;
+            line-height: 1.5;            
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--brand-seconed-color);
@@ -137,14 +137,12 @@ interface SearchData {
         @media (min-width: 640px) {
             .hero-title {
                 font-size: 3rem;
-                line-height: 1;
             }
         }
 
         @media (min-width: 768px) {
             .hero-title {
                 font-size: 3.75rem;
-                line-height: 1;
             }
         }
 
@@ -203,10 +201,9 @@ interface SearchData {
 
         .filter-label {
             display: block;
-            text-align: left;
             font-size: 1.125rem;
             line-height: 1.75rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             color: var(--brand-color);
         }
 
@@ -216,7 +213,7 @@ interface SearchData {
 
         .filter-select {
             width: 100%;
-            padding-left: 1rem;
+            padding: 0rem 1rem;
             padding-top: 1rem;
             padding-bottom: 1rem;
             border-radius: 0.75rem;
@@ -284,17 +281,17 @@ interface SearchData {
         }
 
         select::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 4px;
-        }
-
-        select::-webkit-scrollbar-thumb {
             background: var(--brand-color);
             border-radius: 4px;
         }
 
+        select::-webkit-scrollbar-thumb {
+            background: red;
+            border-radius: 4px;
+        }
+
         select::-webkit-scrollbar-thumb:hover {
-            background: var(--brand-color-dark);
+            background: var(--brand-seconed-color);
         }
 
         option {
@@ -315,6 +312,8 @@ export class HeroSectionComponent implements OnInit {
     @Input() showFilter: boolean = false;
     @Output() search = new EventEmitter<SearchData>();
 
+    allLocations = egyptGovernoratesArrayen;
+
     allServicesType = [
         'Pet Training',
         'Pet Grooming',
@@ -325,8 +324,6 @@ export class HeroSectionComponent implements OnInit {
         'Pet Taxi',
         'Pet Walking',
     ]
-
-    allLocations = egyptGovernoratesArrayen;
 
     selectedService = '';
     selectedLocation = '';

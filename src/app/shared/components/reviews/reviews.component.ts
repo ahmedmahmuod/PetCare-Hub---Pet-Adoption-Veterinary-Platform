@@ -62,9 +62,7 @@ import { TranslateModule } from '@ngx-translate/core';
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" 
-                class="submit-button" 
-                [disabled]="reviewForm.invalid">
+        <button type="submit" class="submit-button" [disabled]="reviewForm.invalid">
           {{ 'Pages.Services.Single_Service.Tabs.Reviews_Page.Btn' | translate }}
         </button>
       </form>
