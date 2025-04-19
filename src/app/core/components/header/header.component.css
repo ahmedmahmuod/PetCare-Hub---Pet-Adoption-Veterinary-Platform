@@ -18,13 +18,15 @@ header {
 
 .nav-left ul {
   display: flex;
-  gap: 15px;
+  gap: 5px;
 }
 .nav-left ul li {
   color: var(--seconed-color);
-  font-size: 1.0rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: 0.2s ease;
+  padding: 5px;
+  position: relative;
 }
 
 .nav-left ul li:hover {
@@ -159,7 +161,6 @@ header {
 .page-header-active {
   color: var(--brand-color) !important;
   background-color: var(--brand-seconed-color);
-  padding: 6px 12px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -175,9 +176,9 @@ header {
 
 .new-badge {
   position: absolute;
-  top: -10px;
+  top: -6px;
   background: linear-gradient(45deg, #14ff00, #2c8400);
-  color: white;
+  color: var(--seconed-color);
   font-size: 9px;
   font-weight: bold;
   padding: 2px 5px;
@@ -187,10 +188,10 @@ header {
 }
 
 .new-en {
-  right: -21px;
+  right: -18px;
 }
 .new-ar {
-  right: 35px;
+  right: 50px;
 }
 
 @keyframes blink-animation {

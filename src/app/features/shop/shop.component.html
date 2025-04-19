@@ -3,7 +3,7 @@
 
     <!-- Categories Sidebar -->
     <div class="lg:w-64 flex-shrink-0">
-      <h2 class="text-xl text-brand-color font-semibold mb-4">Categories</h2>
+      <h2 class="text-xl text-brand-color font-semibold mb-4">{{'Pages.Shop.Categories.Title' | translate}}</h2>
       <div class="">
         <div class="space-y-3">
           <label *ngFor="let cat of categories" class="flex items-center gap-3 cursor-pointer hover:bg-gray-50 p-2 rounded-md transition-colors">
@@ -25,7 +25,7 @@
 
       <!-- Search Bar -->
       <div class="relative mb-8">
-        <input type="text" [(ngModel)]="searchTerm" (input)="filterProducts()" placeholder="Search for products, brands or keywords..." class="w-full h-full bg-transparent text-brand-color p-3 outline-none border ">
+        <input type="text" [(ngModel)]="searchTerm" (input)="filterProducts()" [placeholder]="('Pages.Shop.Search_Bar.Placeholder' | translate)" class="w-full h-full bg-transparent text-brand-color p-3 pr-20 outline-none border ">
         <button class="absolute right-0 top-0 h-full px-4 bg-brand-color text-seconed-color transition-colors" (click)="filterProducts()">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-10" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
@@ -39,7 +39,7 @@
     } @else {
       <!-- No Products Found -->
       <div *ngIf="(filteredProducts$ | async)?.length === 0" class="text-center text-fourth-color text-lg py-16">
-        No products match your search or filter criteria.
+        {{'Pages.Shop.Search_Bar.Filter_Empty' | translate}}
       </div>
 
       <!-- Products Grid -->

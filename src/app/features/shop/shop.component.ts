@@ -7,11 +7,12 @@ import { ProductsService } from '../../core/services/products/products.service';
 import { BehaviorSubject, map } from 'rxjs';
 import { PaginationComponent } from "../../shared/components/pagination/pagination.component";
 import { ProductsPageSkeltonComponent } from "../../shared/components/skeletons/products-page/products-page-skelton.component";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, ProductCardComponent, PaginationComponent, ProductsPageSkeltonComponent],
+  imports: [CommonModule, FormsModule, ProductCardComponent, PaginationComponent, ProductsPageSkeltonComponent, TranslateModule],
   templateUrl: './shop.component.html',
   styles: [`
     :host { display: block; min-height: 100vh; }

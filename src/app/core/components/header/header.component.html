@@ -15,9 +15,9 @@
                     <li routerLinkActive="page-header-active" routerLink="/veterinary">{{'Header.Links.Vets' | translate}}</li>
                     <li routerLinkActive="page-header-active" routerLink="/shop">{{'Header.Links.Shop' | translate}}</li>
                     <li routerLinkActive="page-header-active" routerLink="/blogs">{{'Header.Links.Blogs' | translate}}</li>
-                    <li class="new-badge-wrapper">
-                        <span class="new-badge" [ngClass]="currentLang === 'en' ? 'new-en' : 'new-ar'">{{'Header.Links.Community.Padge' | translate}}</span>
+                    <li routerLinkActive="page-header-active" routerLink="/community" class="new-badge-wrapper">
                         {{'Header.Links.Community.Title' | translate}}
+                        <span class="new-badge" [ngClass]="currentLang === 'en' ? 'new-en' : 'new-ar'">{{'Header.Links.Community.Padge' | translate}}</span>
                     </li>                    
                 </ul>
             </div>
@@ -53,13 +53,13 @@
             <!-- Links -->
             <div class="mobile-links mb-6">
                 <ul>
-                    <li routerLinkActive="page-header-active" routerLink="/home">{{'Header.Links.Home' | translate}}</li>
-                    <li routerLinkActive="page-header-active" routerLink="/services">{{'Header.Links.Services' | translate}}</li>
-                    <li routerLinkActive="page-header-active" routerLink="/adoption">{{'Header.Links.Adoption' | translate}}</li>
-                    <li routerLinkActive="page-header-active" routerLink="/veterinary">{{'Header.Links.Vets' | translate}}</li>
-                    <li>{{'Header.Links.Shop' | translate}}</li>
-                    <li routerLinkActive="page-header-active" routerLink="/blogs">{{'Header.Links.Blogs' | translate}}</li>
-                    <li class="new-badge-wrapper">
+                    <li (click)="toggleMenu()" routerLinkActive="page-header-active" routerLink="/home">{{'Header.Links.Home' | translate}}</li>
+                    <li (click)="toggleMenu()" routerLinkActive="page-header-active" routerLink="/services">{{'Header.Links.Services' | translate}}</li>
+                    <li (click)="toggleMenu()" routerLinkActive="page-header-active" routerLink="/adoption">{{'Header.Links.Adoption' | translate}}</li>
+                    <li (click)="toggleMenu()" routerLinkActive="page-header-active" routerLink="/veterinary">{{'Header.Links.Vets' | translate}}</li>
+                    <li (click)="toggleMenu()" routerLinkActive="page-header-active" routerLink="/shop">{{'Header.Links.Shop' | translate}}</li>
+                    <li (click)="toggleMenu()" routerLinkActive="page-header-active" routerLink="/blogs">{{'Header.Links.Blogs' | translate}}</li>
+                    <li (click)="toggleMenu()" routerLinkActive="page-header-active" routerLink="/community" class="new-badge-wrapper">
                         <span class="new-badge" [ngClass]="currentLang === 'en' ? 'new-en' : 'new-ar'">{{'Header.Links.Community.Padge' | translate}}</span>
                         {{'Header.Links.Community.Title' | translate}}
                     </li>    

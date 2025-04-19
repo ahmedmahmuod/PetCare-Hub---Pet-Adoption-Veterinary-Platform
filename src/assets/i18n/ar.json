@@ -313,8 +313,61 @@
           "Reviews": "المراجعات"
         }
       }
+    },
 
+    "Shop": {
+      "Search_Bar": {
+        "Placeholder": "ابحث عن منتجات أو فئات أو كلمات مفتاحية",
+        "Filter_Empty": "لا توجد منتجات تطابق معايير البحث أو التصفية."
+      },
+      "Categories": {
+        "Title": "الفئات"
+      },
+      "Product": {
+        "Price_Unit": "ج.م"
+      }
+    },
+
+    "Community": {
+      "Form_New_Post": {
+        "Placeholder": "بماذا تفكر؟",
+        "Privacy": {
+          "Public": "عام",
+          "Private": "خاص"
+        },
+        "Photo": "إضافة صورة",
+        "Btn": "نشر"
+      },
+
+      "Post_Card": {
+        "Time_Ago": {
+          "Seconds": "الآن",
+          "Minutes": "منذ {{value}} دقيقة",
+          "Hours": "منذ {{value}} ساعة",
+          "Days": "منذ {{value}} يوم",
+          "Weeks": "منذ {{value}} أسبوع"
+        },
+        "Edited": "تم التعديل",
+        "Likes": "الإعجابات",
+
+        "PopUpProfile": {
+          "Following": "المتابَعون",
+          "Followers": "المتابِعون",
+          "Pets": "الحيوانات",
+          "Rule": {
+            "Admin": "مسؤول",
+            "User": "مستخدم"
+          }
+        }
+      },
+
+      "Profile": {
+        "Contact_Information": "معلومات التواصل",
+        "Posts": "المنشورات"
+      }
     }
+
+
 
   },
 
@@ -345,9 +398,21 @@
   "Global": {
     "View_Btn": "عرض الكل",
 
+    "Add_To_Cart_Btn": "اضف الى السلة",
+
     "Pagination": {
       "Prev": "السابق",
       "Next": "التالي"
+    },
+
+    "Is_Not_Authenticated": {
+      "Title": "مطلوب تسجيل الدخول",
+      "Subtitle": "يرجى تسجيل الدخول للوصول إلى هذا المحتوى. قد تكون جلستك قد انتهت أو لم تقم بتسجيل الدخول بعد.",
+      "Login": "تسجيل الدخول",
+      "Register": "إنشاء حساب",
+      "Or": "أو",
+      "Help": "هل تحتاج إلى مساعدة؟",
+      "Contact_Support": "تواصل مع الدعم"
     }
     
   }

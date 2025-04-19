@@ -1,3 +1,5 @@
+import { Pet } from "../../pets/pet.model";
+
 export interface UserData {
   _id: string;
   name: string;
@@ -6,7 +8,7 @@ export interface UserData {
   createdAt: string;
   updatedAt: string;
   __v: number;
-  pets?: string[];
+  pets?: Pet[];
   profileImage?: string;
   favPet?: string[];
   favProduct?: string[];
@@ -19,4 +21,12 @@ export interface UserData {
     hashedCardSecurityCode: string;
   }[];
   id: string;
+  phoneNumber?: string;
+}
+
+export interface UserDataResponse {
+  status: string;
+  data: {
+    data: UserData;
+  };
 }

@@ -323,7 +323,60 @@
         }
       }
 
+    },
+
+    "Shop": {
+      "Search_Bar": {
+        "Placeholder": "Search for products, categories, or keywords",
+        "Filter_Empty": "No products match your search or filter criteria."
+      },
+      "Categories": {
+        "Title": "Categories"
+      },
+      "Product": {
+        "Price_Unit": "L.E"
+      }
+    },
+
+    "Community": {
+      "Form_New_Post": {
+        "Placeholder": "What's on your mind?",
+        "Privacy": {
+          "Public": "Public",
+          "Private": "Private"
+        },
+        "Photo": "Add a photo",
+        "Btn": "Post"
+      },
+
+      "Post_Card": {
+        "Time_Ago": {
+          "Seconds": "Just now",
+          "Minutes": "{{value}} minutes ago",
+          "Hours": "{{value}} hours ago",
+          "Days": "{{value}} days ago",
+          "Weeks": "{{value}} weeks ago"
+        },
+        "Edited": "Edited",
+        "Likes": "Likes",
+
+        "PopUpProfile": {
+          "Following": "Following",
+          "Followers": "Followers",
+          "Pets": "Pets",
+          "Rule": {
+            "Admin": "Admin",
+            "User": "User"
+          } 
+        }
+      },
+
+      "Profile": {
+        "Contact_Information": "Contact Information",
+        "Posts": "Posts"
+      }
     }
+
   },
 
   "Footer": {
@@ -353,9 +406,21 @@
   "Global": {
     "View_Btn": "View All",
 
+    "Add_To_Cart_Btn": "Add to Cart",
+
     "Pagination": {
       "Prev": "Previous",
       "Next": "Next"
+    },
+
+    "Is_Not_Authenticated": {
+      "Title": "Authentication Required",
+      "Subtitle": "Please log in to access this content. Your session may have expired or you haven't signed in yet.",
+      "Login": "Login",
+      "Register": "Create an account",
+      "Or": "or",
+      "Help": "Need assistance?",
+      "Contact_Support": "Contact Support"
     }
     
   }

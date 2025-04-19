@@ -3,24 +3,23 @@ import { CommonModule } from '@angular/common';
 import { FavoriteIconComponent } from "../buttons/fav-btn.component";
 import { AddToCartButtonComponent } from "../buttons/add-to-cart-btn.component";
 import { Product } from '../../../core/models/products/product.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-card',
   standalone: true,
-  imports: [CommonModule, FavoriteIconComponent, AddToCartButtonComponent],
+  imports: [CommonModule, FavoriteIconComponent, AddToCartButtonComponent, TranslateModule ],
   template: `
     <div class="group rounded-lg shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:shadow-xl transition-shadow duration-300 relative overflow-hidden">
 
       <!-- Favorite Button -->
-      <div class="absolute top-5 right-5 transform translate-x-5 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" aria-label="Add to favorites">
+      <div dir="ltr" class="absolute top-5 right-5 transform translate-x-5 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" aria-label="Add to favorites">
         <app-favorite-icon *ngIf="!isWishlist" />
         
         <button *ngIf="isWishlist" class="text-red-600 text-xl cursor-pointer">
             <i class="fa-solid fa-trash"></i>
         </button>
       </div>
-
-      <!-- Delete Button -->
 
       <!-- Discount Badge -->
       <div *ngIf="product.discount" class="absolute top-2 left-2 bg-red-500 text-seconed-color text-xs font-medium px-2 py-1 rounded z-10">
@@ -38,8 +37,8 @@ import { Product } from '../../../core/models/products/product.model';
         <h3 class="font-medium text-brand-color mb-2 line-clamp-2">{{ product.name }}</h3>
         <div class="space-y-1">
           <div class="flex items-baseline gap-2">
-            <span class="text-xl font-bold text-brand-color">{{ product.priceAfterDiscount }} LE</span>
-            <span *ngIf="product.discount" class="text-sm text-fourth-color line-through">{{ product.price }} LE</span>
+            <span class="text-xl font-bold text-brand-color">{{ product.priceAfterDiscount }} {{'Pages.Shop.Product.Price_Unit' | translate}}</span>
+            <span *ngIf="product.discount" class="text-sm text-fourth-color line-through">{{ product.price }}{{'Pages.Shop.Product.Price_Unit' | translate}}</span>
           </div>
         </div>
       </div>

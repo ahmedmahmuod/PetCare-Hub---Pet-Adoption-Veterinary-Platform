@@ -1,5 +1,3 @@
-import { UserData } from '../user/details/user-details.model';
-
 export interface Pet {
   _id: string;
   name: string;
@@ -14,7 +12,7 @@ export interface Pet {
   size: string;
   owner: string;
   availableForAdoption?: boolean;
-  user?: UserData;
+  user?: string;
   vaccinations_id?: string[];
   id: string;
 }
